@@ -94,6 +94,15 @@ h5 {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .header-txt {
+    font-size: 50px;
+    line-height: 61px;
+    width: 588px;
+    margin-top: 40px;
+  }
+}
+
 .form {
   margin-bottom: 25px;
 }
@@ -163,8 +172,15 @@ h5 {
     margin-bottom: 18px;
     margin-top: 60px;
   }
-  .txt-heart {
-    color: red;
+}
+
+@media screen and (min-width: 1280px) {
+  .txt-footer {
+    font-size: 16px;
+    line-height: 20px;
+    width: 521px;
+    margin-bottom: 18px;
+    margin-top: 85px;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -26,8 +26,15 @@ line-height: 20px;
 width: 521px;
 margin-bottom: 18px;
 margin-top: 60px;
-}
-.txt-heart{
-   color: red;
 };
-}
+};
+// desctop
+@media screen and (min-width: 1280px){
+   .txt-footer{
+font-size: 16px;
+line-height: 20px;
+width: 521px;
+margin-bottom: 18px;
+margin-top: 85px;
+   };
+};
