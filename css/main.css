@@ -83,6 +83,17 @@ h5 {
   color: #DC56C5;
 }
 
+@media screen and (min-width: 768px) {
+  .header-txt {
+    width: 353px;
+    font-size: 30px;
+    line-height: 37px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .form {
   margin-bottom: 25px;
 }
@@ -142,5 +153,18 @@ h5 {
 
 .txt-heart {
   color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .txt-footer {
+    font-size: 16px;
+    line-height: 20px;
+    width: 521px;
+    margin-bottom: 18px;
+    margin-top: 60px;
+  }
+  .txt-heart {
+    color: red;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -16,5 +16,18 @@ margin-top: 60px;
 
 .txt-heart{
    color: red;
+};
 
+// tablet
+@media screen and (min-width: 768px){
+.txt-footer{
+font-size: 16px;
+line-height: 20px;
+width: 521px;
+margin-bottom: 18px;
+margin-top: 60px;
+}
+.txt-heart{
+   color: red;
+};
 }
