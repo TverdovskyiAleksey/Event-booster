@@ -1,5 +1,5 @@
-import { BASE_URL } from './baseData'
-import { KEY } from './baseData'
+import { BASE_URL } from './baseData';
+import { KEY } from './baseData';
 
 export default class NewApiService{
     constructor() {        
@@ -7,9 +7,8 @@ export default class NewApiService{
         this.page = 1;
     }       
     
-    fetchArticles() {        
-         
-    return fetch(`${BASE_URL}events.json?keyword=${this.searchQuery }&source=universe&apikey=${KEY}`)
+    fetchArticles() {              
+    return fetch(`${BASE_URL}events.json?&keyword=${this.searchQuery}&apikey=${KEY}`)
             .then(r => r.json())
             .then(({ _embedded }) => {
                 // this.page += 1;
