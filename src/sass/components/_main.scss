@@ -11,6 +11,12 @@
   color: $accent-color;
   background: rgba(255, 255, 255, 0.2);
   border: none;
+  transition: background 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+}
+.form-control:hover,
+.form-control:focus {
+  background: rgba(220, 86, 198, 0.5);
+  outline: transparent;
 }
 .input-blok {
   position: relative;
