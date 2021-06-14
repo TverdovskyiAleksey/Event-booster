@@ -8,6 +8,7 @@ const refs = getRefs();
 const newsApiService = new NewsApiService();
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 2000));
 
+
 if (newsApiService.query == 0) {    
     randomList();
 }

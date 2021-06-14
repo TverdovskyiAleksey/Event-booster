@@ -11,7 +11,7 @@ export default class NewApiService{
     }       
     
     fetchArticles() {              
-    return fetch(`${BASE_URL}events.json?&keyword=${this.searchQuery}&apikey=${KEY}`)
+    return fetch(`${BASE_URL}events.json?keyword=${this.searchQuery}&apikey=${KEY}`)
             .then(r => r.json())
             .then(({ _embedded }) => {
                 // this.page += 1;
