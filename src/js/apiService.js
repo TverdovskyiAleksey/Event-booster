@@ -1,5 +1,8 @@
 import { BASE_URL } from './baseData';
 import { KEY } from './baseData';
+// import { fetchRandom } from './apiFetchRandom';
+
+// fetchRandom();
 
 export default class NewApiService{
     constructor() {        
@@ -16,6 +19,7 @@ export default class NewApiService{
             })
             .catch(error => console.log(error));
     }
+
     
     resetPage() {
         this.page = 1;

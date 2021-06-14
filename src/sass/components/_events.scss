@@ -1,0 +1,53 @@
+// mobile
+
+// tablet
+// @media screen and (min-width: 768px) {
+// }
+
+// desctop
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-foto {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50px 0px;
+}
+.events {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  @media screen and (min-width: 1280px) {
+    width: calc((100% - 15px * 8) / 4);
+  }
+}
+
+.card {
+}
+.team {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+
+  color: $title-text-color;
+}
+
+.start-date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: $primary-text-color;
+}
+
+.place {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  color: $primary-text-color;
+}
