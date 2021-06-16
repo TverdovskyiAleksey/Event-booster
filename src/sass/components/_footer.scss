@@ -1,4 +1,8 @@
 // mobile
+.footer {
+   background-color: #0e0e0e;
+padding-bottom: 27px;
+}
 .txt-footer{
 font-family: Montserrat;
 font-style: normal;
@@ -7,11 +11,10 @@ font-size: 14px;
 line-height: 17px;
 text-align: center;
 width: 252px;
-color: accent-color;
+color: #939393;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 27px;
-margin-top: 60px;
+padding-top: 60px
 };
 
 .txt-heart{
@@ -24,8 +27,8 @@ margin-top: 60px;
 font-size: 16px;
 line-height: 20px;
 width: 521px;
-margin-bottom: 18px;
-margin-top: 60px;
+padding-top: 60px;
+padding-bottom: 18px;
 };
 };
 // desctop
@@ -34,7 +37,8 @@ margin-top: 60px;
 font-size: 16px;
 line-height: 20px;
 width: 521px;
-margin-bottom: 18px;
-margin-top: 85px;
+padding-top: 85px;
+padding-bottom: 18px;
    };
 };
+
