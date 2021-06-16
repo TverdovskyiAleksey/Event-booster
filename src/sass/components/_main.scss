@@ -1,17 +1,31 @@
-.form {
-  margin-bottom: 25px;
-}
-.form input {
+.form-control {
   width: 270px;
   height: 40px;
   border-radius: 20px;
   padding: 10px 30px;
-  font-size: 16px;
+  font-size: $font-size-16;
   line-height: 1.25;
-  color: #939393;
-  background: rgba(255, 255, 255, 0.2);
+  color: $accent-color;
+  background: $search-bg-color;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+
+  &:hover,
+  &:focus {
+    background: rgba(220, 86, 198, 0.5);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 25px rgba(231, 57, 217, 0.774);
+    outline: transparent;
+  }
+
+  &:focus-within ~ svg {
+    opacity: 0;
+  }
 }
+
 .input-blok {
   position: relative;
   width: 270px;
@@ -22,13 +36,21 @@
   position: absolute;
   top: 14px;
   right: 30px;
-  fill: #939393;
+}
+@media screen and(max-width: 767px) {
+  .form:first-child {
+    margin-bottom: 25px;
+  }
 }
 @media screen and (min-width: 768px) {
   .searching-blok {
     display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 27px;
   }
-  .form {
+  .form:first-child {
     margin-right: 30px;
   }
 }
@@ -98,4 +120,8 @@ img {
   margin: 5px 0px;
 
   color: #ffffff;
+@media screen and (min-width: 1280px) {
+  .searching-blok {
+    margin-top: 52px;
+  }
 }
