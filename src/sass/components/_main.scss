@@ -9,6 +9,8 @@
   background: $search-bg-color;
   border: none;
   cursor: pointer;
+
+  border-radius: 20px;
   transition: background 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
     transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
     box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
