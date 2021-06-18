@@ -12,8 +12,7 @@ const refs = {
     lightBoxOverlay: document.querySelector('.backdrop'),
     bodyEl: document.querySelector('body'),
 
-    lightboxContent: document.querySelector('.modals'),
-    eventsList: document.querySelector('.js-event-list'),
+    cardMurkup: document.querySelector('.modal-form')
 };
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -30,6 +29,12 @@ function onOpenModal() {
     window.addEventListener('keydown', onEsckeyPress);
     toggleModal();
 
+    fetchEventsById()
+        .then(renderMurkupCard)
+        .catch(error => {
+            console.log(error)
+        })
+
 }
 
 function onCloseModalBtmClick() {
@@ -40,6 +45,7 @@ function onCloseModal() {
     refs.bodyEl.classList.remove('modal-is-open');
     window.removeEventListener('keydown', onEsckeyPress);
     toggleModal();
+    refs.cardMurkup.innerHTML = '';
 }
 
 function onBackdropClick(evt) {
@@ -54,12 +60,19 @@ function onEsckeyPress(evt) {
     };
 };
 
-const r = fetch(`${BASE_URL}events.json ? id =& source= universe & apikey=${KEY}`)
-    .then(response => {
-        return response.json();
-    }).then(ent => {
-        console.log(ent);
-    });
 
 
+function fetchEventsById() {
+    return fetch(`${BASE_URL}events.json?id=&apikey=${KEY}`)
+        .then(response => {
+            return response.json();
+        })
+
+}
+
+function renderMurkupCard(ent) {
+    const markup = cardTmpl(ent);
+    console.log(markup);
+    refs.cardMurkup.innerHTML = markup;
+}
 
