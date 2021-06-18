@@ -1,0 +1,31 @@
+{{#each this}}
+<div class="modal-container">
+    <img class="logo" src="{{images.0.url}}" alt="{{name}}">
+    <div class="card">
+        <div class="info-img">
+            <img class="demo" src="{{images.0.url}}" alt="{{name}}">
+        </div>
+
+        <div class="info-card">
+            <span class="title-card">INFO</span>
+            <p class="info-text">{{_embedded.attractions.[0].url}}
+            </p>
+            <span class="title-card">WHEN</span>
+            <p class="info-text">{{dates.start.localDate}} <br> {{dates.start.localTime}}</p>
+            <span class="title-card">WHERE</span>
+            <p class="info-text">{{_embedded.venues.[0].city.name}}, {{_embedded.venues.[0].country.name}} <br>
+                {{_embedded.venues.0.name}}</p>
+            <span class="title-card">WHO</span>
+            <p class="info-text">{{name}}</p>
+            {{#each priceRanges}}
+            <span class="title-card">PRICES</span>
+            <p class="info-text">Standart 300-500 UAH</p>
+            <button class="modal-button">BUY TICKETS</button>
+            <p class="info-text">{{this.type}} {{this.min}} - {{this.max}} {{this.currency}}</p>
+            <button class="modal-button-vip">BUY TICKETS</button>
+            {{/each}}
+        </div>
+        <button class="btn-more">MORE FROM THIS AUTHOR</button>
+    </div>
+</div>
+{{/each}}
