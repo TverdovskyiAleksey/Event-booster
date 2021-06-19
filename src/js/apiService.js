@@ -6,27 +6,32 @@ export default class NewApiService{
     constructor() {        
         this.searchQuery = '';
         this.page = 1;
+        this.totalElements = 980;
+        this.eventPageQuantity = 20;
+
     }       
     
     fetchArticles() {              
-    return fetch(`${BASE_URL}events.json?keyword=${this.searchQuery}&apikey=${KEY}`)
+        return fetch(`${BASE_URL}events.json?keyword=${this.searchQuery}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`)
             .then(r => r.json())
-            .then(({ _embedded }) => {
-                // this.page += 1;
-                return  _embedded.events;
-            })
+      .then(data => {
+        this.totalElements = data.page.totalElements;
+        return data._embedded.events;
+      })
             .catch(error => console.log(error));
     }
 
     fetchRandom() {       
-
-        return fetch( `${BASE_URL}events.json?classificationName=music&sort=random&size=20&page=1&apikey=${KEY}`)
-            .then(r => r.json())    
-            .then(({ _embedded }) => {                
-                return  _embedded.events;
-            })
+        return fetch(`${BASE_URL}events.json?classificationName=music&sort=random&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
+    )
+      .then(r => r.json())
+      .then(data => {
+        this.totalElements = data.page.totalElements;
+        return data._embedded.events;
+      })
             .catch(error => console.log(error));
-    }
+  }
+
 
     fetchByCountries() {
     return fetch(`${BASE_URL}events.json?countryCode=${this.searchQuery}&apikey=${KEY}`)
@@ -34,7 +39,7 @@ export default class NewApiService{
             .then(({ _embedded }) => {
                 return  _embedded.events;
             })
-            .catch(error => console.log(error));
+            .catch(error => error);
     }
     
     resetPage() {
@@ -48,5 +53,10 @@ export default class NewApiService{
     set  query(newQwery) {
      this.searchQuery=newQwery;    
     }
+    
+    setPage(page) {
+    this.page = page;
+  }
+
 }
 

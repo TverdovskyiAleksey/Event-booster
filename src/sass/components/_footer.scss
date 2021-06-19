@@ -1,38 +1,36 @@
-// mobile
 .footer {
-  background-color: $modal-text-color;
   padding-bottom: 27px;
+
+  background-color: $modal-text-color;
 
   @media screen and (min-width: 768px) {
     padding-bottom: 18px;
   }
 }
 .txt-footer {
-  font-weight: $font-weight-regular;
-  font-size: $font-size-14;
-  line-height: 1.21;
-  text-align: center;
-  color: $accent-color;
   margin-left: auto;
   margin-right: auto;
   padding-top: 67px;
+  text-align: center;
+
+  font-weight: $font-weight-regular;
+  font-size: $font-size-14;
+  line-height: 1.21;
+
+  color: $accent-color;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 65px;
+
+    font-size: $font-size-16;
+    line-height: 1.25;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 85px;
+  }
 }
 
 .txt-heart {
   color: $red-color;
-}
-
-// tablet
-@media screen and (min-width: 768px) {
-  .txt-footer {
-    font-size: $font-size-16;
-    line-height: 1.25;
-    padding-top: 65px;
-  }
-}
-// desctop
-@media screen and (min-width: 1280px) {
-  .txt-footer {
-    padding-top: 85px;
-  }
 }

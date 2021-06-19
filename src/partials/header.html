@@ -1,29 +1,42 @@
 <div class="header-img">
   <section>
     <div class="background-header">
-      <a href="" class="logo-header"><img class="logo-img" src="./images/logo.png" alt="" /></a>
+      <a href="" class="logo-header">
+        <picture>
+          <source srcset="
+          ./images/logo-desktop.png 1x" media="(min-width:1280px)"
+            type="image/png">
+          <source srcset="
+          ./images/logo-tablet.png 1x" media="(min-width:768px)"
+            type="image/png">
+          <source srcset="
+          ./images/logo-mobile.png 1x" media="(max-width:767px)"
+            type="image/png">
+            <img class="logo-img" src="./images/logo-mobile.png" alt="" />
+        </picture>
+      </a>
       <h1 class="header-txt">FIND BEST EVENTS AROUND THE WORLD</h1>
-        <div>
-        <form class="input-form js-country-form">
+      <div class="searching-block container">
+        <form class="input-form search-form js-search-form">
           <div class="input-block">
-            <input type="text" class="form-control" placeholder="Choose country" autocomplete="off" />
-            <svg width=15 height=10>
-        <form class="form js-country-form">
-          <div class="input-blok">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Choose country"
-              autocomplete="off"
-            />
-            <svg width="15" height="10">
-              <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+            <input type="text" class="form-control" placeholder="Start searching" autocomplete="off" />
+            <svg width=12 height=12>
+              <use href="./images/icons/sprite.svg#icon-magnifier"></use>
             </svg>
           </div>
         </form>
-        <div class="country-block">
-          <ul class="drop-countries js-dropdown"></ul>
-        </div>
+        <div>
+          <form class="input-form js-country-form">
+            <div class="input-block">
+              <input type="text" class="form-control" placeholder="Choose country" autocomplete="off" />
+              <svg width=15 height=10>
+                <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+              </svg>
+            </div>
+          </form>
+          <div class="country-block">
+            <ul class="drop-countries js-dropdown"></ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,44 +1,50 @@
 .modal-form {
-  padding: 0px 12px;
   display: flex;
+  padding: 0px 12px;
   flex-direction: column;
 }
 
 .logos {
-  width: 102px;
-  height: 102px;
   display: block;
   margin-top: 64px;
   margin-bottom: 18px;
   margin-left: auto;
   margin-right: auto;
+
+  width: 102px;
+  height: 102px;
+
   border-radius: 100px;
 
   @media screen and (min-width: 768px) {
-    width: 70px;
-    height: 70px;
     margin-top: 30px;
     margin-bottom: 40px;
+
+    width: 70px;
+    height: 70px;
   }
 
   @media screen and (min-width: 1280px) {
     margin-top: 30px;
     margin-bottom: 40px;
+
     width: 132px;
     height: 132px;
   }
 }
 .demo {
+  display: none;
   margin-right: auto;
 
-  display: none;
   @media screen and(min-width: 768px) and (max-width: 1279px) {
     display: block;
+
     width: 233px;
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
     display: block;
+
     width: 360px;
     height: 641px;
   }
@@ -53,64 +59,74 @@
     margin-left: 30px;
   }
 }
+
 .info-img {
   display: block;
 }
+
 .info-card {
   display: block;
   text-align: center;
 
   @media screen and (min-width: 768px) {
-    text-align: left;
     margin-left: 30px;
+    text-align: left;
   }
 
   @media screen and (min-width: 1280px) {
-    text-align: left;
     margin-left: 60px;
+    text-align: left;
   }
 }
 .info-text {
   margin: 0px 0px 10px;
-  font-size: 16px;
-  line-height: 1.25;
   text-align: center;
+
+  font-size: $font-size-16;
+  line-height: 1.25;
 
   @media screen and (min-width: 768px) {
     margin: 0px 0px 10px;
-    font-size: 16px;
-    line-height: 1.25;
     text-align: left;
+
+    font-size: $font-size-16;
+    line-height: 1.25;
   }
 
   @media screen and (min-width: 1280px) {
     margin: 0px 0px 20px;
-    font-size: 18px;
-    line-height: 1.2;
     text-align: left;
+
+    font-size: $font-size-18;
+    line-height: 1.2;
   }
 }
 .title-modal {
-  font-size: 20px;
-  line-height: 1.2;
-  text-align: center;
   margin-bottom: 12px;
+  text-align: center;
+
+  font-size: $font-size-20;
+  line-height: 1.2;
   letter-spacing: 0.03em;
+
   color: $title-text-color;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1.15;
     text-align: center;
+
+    font-size: $font-size-20;
+    font-weight: $font-weight-bold;
+    line-height: 1.15;
   }
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1.15;
     text-align: center;
+
+    font-size: $font-size-20;
+    font-weight: $font-weight-bold;
+    line-height: 1.15;
   }
 }
 .modal-form .label-card {
@@ -120,34 +136,34 @@
   display: block;
   margin-bottom: 5px;
 
-  font-weight: 600;
-  font-size: 20px;
+  font-size: $font-size-20;
+  font-weight: $font-weight-semi-bold;
   line-height: 1.2;
 
   color: $title-text-color;
+
   @media screen and (min-width: 768px) {
-    margin-bottom: 5px;
-    font-weight: 600;
-    line-height: 1.2;
   }
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 7px;
-    font-size: 24px;
+
+    font-size: $font-size-24;
   }
 }
 
 .modal-button {
-  width: 145px;
-  height: 40px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
 
-  font-weight: bold;
+  width: 145px;
+  height: 40px;
 
-  font-size: 16px;
+  font-size: $font-size-16;
+  font-weight: $font-weight-bold;
   line-height: 1.87;
+
   border: none;
   border-radius: 4px;
   color: $primary-text-color;
@@ -174,15 +190,17 @@
 }
 
 .modal-button-vip {
-  width: 145px;
-  height: 40px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
 
-  font-weight: bold;
-  font-size: 16px;
+  width: 145px;
+  height: 40px;
+
+  font-weight: $font-weight-bold;
+  font-size: $font-size-16;
   line-height: 1.87;
+
   border: none;
   border-radius: 4px;
   color: $primary-text-color;
@@ -196,6 +214,7 @@
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 45px;
+
     width: 200px;
     height: 50px;
   }
@@ -208,30 +227,33 @@
 }
 
 .btn-more {
-  width: 230px;
-  height: 40px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 30px;
-
-  padding: 0px;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 1.87;
-
-  border-radius: 5px;
-  border-color: $accent-modal-color;
-  color: $accent-modal-color;
-  background-color: #fff2fd;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  padding: 0px;
+
+  width: 230px;
+  height: 40px;
+
+  font-weight: $font-weight-regular;
+  font-size: $font-size-16;
+  line-height: 1.87;
+
+  border-color: $accent-modal-color;
+  border-radius: 5px;
+  color: $accent-modal-color;
+  background-color: $modal-bg-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   @media screen and(min-width: 768px) and (max-width: 1279px) {
     width: 255px;
     height: 40px;
   }
+
   @media screen and(min-width: 1280px) {
     width: 255px;
     height: 50px;
@@ -246,18 +268,19 @@
 
 .hero-button {
   display: inline-block;
-  cursor: pointer;
+  padding: 8px 16px;
 
   height: 50px;
   width: 200px;
-  border: 0;
-  border-radius: 4px;
-  padding: 8px 16px;
 
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-16;
   line-height: 1.87em;
   letter-spacing: 0.06em;
+
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
 
   background: rgb(0, 153, 255);
   color: rgb(0, 0, 0);
@@ -268,81 +291,86 @@
     cursor: pointer;
   }
 }
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:  rgba(32, 13, 29, 0.6);;
-backdrop-filter: blur(3px);
+  z-index: 12;
+
+  background: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(3px);
   opacity: 1;
   overflow-y: scroll;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: all;
-  z-index: 12;
 }
 
 .modals {
-  
   position: fixed;
-  
-  border-top-left-radius: 150px;
-  border-bottom-right-radius: 150px;
+  top: 50%;
+  left: 50%;
 
   width: 272px;
   height: 915px;
 
-  top: 50%;
-  left: 50%;
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+
+  background-color: $modal-bg-color;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
-  transform: translate(-50%,-50%) scale(1.1);
-  background-color: #fff2fd;
+  transform: translate(-50%, -50%) scale(1.1);
 
   @media screen and (min-width: 768px) {
-    width: 595px;
-    height: 831px;
     padding: 0px 30px;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    width: 595px;
+    height: 831px;
+
+    border-top-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    transform: translate(-50%, -50%);
   }
 
   @media screen and (min-width: 1280px) {
+    padding: 0px 30px;
+
     width: 930px;
     height: 1023px;
-    padding: 0px 30px;
+
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
-  
   }
 }
 .is-hidden {
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  }
+}
 
-  .modal-is-open {
-    overflow: hidden
+.modal-is-open {
+  overflow: hidden;
 }
 .backdrop.is-hidden .modals {
-  transform:translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-closed {
   position: absolute;
+  padding: 1px 6px;
+
   top: 14px;
   right: 30px;
-  padding: 1px 6px;
   width: 30px;
   height: 30px;
 
-  background-color: #fff2fd;
+  background-color: $modal-bg-color;
   border: none;
 
   cursor: pointer;
@@ -360,7 +388,9 @@ backdrop-filter: blur(3px);
   height: 17px;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   @media screen and (min-width: 768px) {
   }
 
@@ -369,4 +399,3 @@ backdrop-filter: blur(3px);
     height: 25px;
   }
 }
-

@@ -4,23 +4,28 @@ import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
 import selectCountry from '/js/selectCountry.js';
-
+import { startPaginationRandom, startPagination } from './pagination';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
-refs.inputSearchForm.addEventListener('input', debounce(onInput, 2000));
-refs.inputCountryForm.addEventListener('click', debounce(onInputCountry, 2000));
+refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
+refs.inputCountryForm.addEventListener('click', debounce(onInputCountry, 500));
+
+if (window.innerWidth > 767 && window.innerWidth < 1280) {
+  newsApiService.eventPageQuantity += 1;
+  option.itemsPerPage += 1;
+}
 
 refs.dropList.hidden = true;
 refs.dropBgColor.hidden = true;
 refs.dropList.addEventListener('click', (e) => {
     selectCountry(e, refs.dropList);
-    // refs.inputCountryForm.querySelector('.form-control').style.color = 'transparent';
 }
 );
 
 if (newsApiService.query == 0) {
     randomList();
+    startPaginationRandom();
 }
 
 function onInput(e) {
@@ -28,20 +33,23 @@ function onInput(e) {
   newsApiService.query = e.target.value;  
   newsApiService.resetPage();
   clearContainer();
-  fetchHits();  
+    fetchHits();
+    startPagination();
 };
 
 function randomList() {
-    newsApiService.fetchRandom().then(events => {
+    newsApiService
+        .fetchRandom()
+        .then(events => {
         appendMarkup(events);
     
-    });
+    }).catch(error => console.log(error));
 }
 
 function fetchHits() {    
     newsApiService.fetchArticles().then(events => {
         appendMarkup(events);
-    });
+    }).catch(error => console.log(error));
 }
 
 function appendMarkup(events) { 
@@ -52,6 +60,8 @@ function clearContainer() {
     refs.eventList.innerHTML = '';
 }
 
+export { clearContainer, fetchHits, newsApiService, randomList };
+    
 function onInputCountry(e) {
   e.preventDefault();
   dropListdMarkup();  
