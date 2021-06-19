@@ -1,5 +1,5 @@
 // mobile
-.logo {
+.logo-header {
   position: absolute;
   top: 0px;
 }
@@ -25,7 +25,7 @@
   color: $title-text-color;
 }
 
-.background {
+.background-header {
   // position: absolute;
   // top: 0px;
   background: url(../images/pic.jpg);
@@ -45,7 +45,7 @@
   .logo-img {
     width: 179px;
   }
-  .background {
+  .background-header {
     background: url(../images/pic-tablet.jpg);
     width: 100%;
     height: 364px;
@@ -66,7 +66,7 @@
   .logo-img {
     width: 201px;
   }
-  .background {
+  .background-header {
     margin: 0 auto;
     background: url(../images/pic-desctop.jpg);
     max-width: 1280px;
