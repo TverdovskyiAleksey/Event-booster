@@ -5,9 +5,11 @@ import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
 import selectCountry from '/js/selectCountry.js';
 import { startPaginationRandom, startPagination, option } from './pagination';
+import onSwitchChange from './switchTogle';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
+refs.switchTogle.addEventListener('change', onSwitchChange);
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
 refs.inputCountryForm.addEventListener('click', debounce(onInputCountry, 500));
 
