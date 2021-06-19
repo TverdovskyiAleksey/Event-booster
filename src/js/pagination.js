@@ -40,4 +40,4 @@ function startPaginationRandom() {
 //     block: 'start',
 //   });
 // }
-export { startPaginationRandom, startPagination };
+export { startPaginationRandom, startPagination, option };
