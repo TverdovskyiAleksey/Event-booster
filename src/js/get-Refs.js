@@ -1,7 +1,8 @@
 export default function getRefs() {
-    return {
-        inputSearchForm: document.querySelector('.js-search-form'),
-        inputCountryForm: document.querySelector('.js-country-form'),
-        eventList: document.querySelector('.js-event-list'),
-    };
+  return {
+    inputSearchForm: document.querySelector('.js-search-form'),
+    inputCountryForm: document.querySelector('.js-country-form'),
+    eventList: document.querySelector('.js-event-list'),
+    pagination: document.querySelector('.tui-pagination'),
+  };
 }
