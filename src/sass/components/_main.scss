@@ -1,25 +1,27 @@
 .form-control {
+  padding: 10px 30px;
+
   width: 270px;
   height: 40px;
-  border-radius: 20px;
-  padding: 10px 30px;
+
   font-size: $font-size-16;
   line-height: 1.25;
-  color: $accent-color;
+  border-radius: 20px;
+
   background: $search-bg-color;
+  color: $primary-text-color;
+  backdrop-filter: blur(20px);
   border: none;
   cursor: pointer;
-
-  border-radius: 20px;
   transition: background 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
     transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
     box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
 
-  &:hover,
+  &:hover {
+    box-shadow: 0px 4px 25px $search-bg-color;
+  }
+
   &:focus {
-    background: rgba(220, 86, 198, 0.5);
-    transform: scale(1.1);
-    box-shadow: 0px 4px 25px rgba(231, 57, 217, 0.774);
     outline: transparent;
   }
 
@@ -28,31 +30,37 @@
   }
 }
 
-.input-blok {
+::placeholder {
+  color: $accent-color;
+}
+
+.input-block {
   position: relative;
-  width: 270px;
   margin-left: auto;
   margin-right: auto;
+
+  width: 270px;
+  z-index: 2;
 }
-.form svg {
+.input-form svg {
   position: absolute;
   top: 14px;
   right: 30px;
 }
 @media screen and(max-width: 767px) {
-  .form:first-child {
+  .search-form {
     margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 768px) {
-  .searching-blok {
+  .searching-block {
     display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 27px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
   }
-  .form:first-child {
+  .search-form {
     margin-right: 30px;
   }
 }
@@ -69,17 +77,20 @@ img {
 
 .team {
   margin-bottom: 5px;
+
   font-weight: $font-weight-bold;
   font-size: $font-size-14;
   line-height: 1.21;
+
   color: $title-text-color;
 }
 
 .start-date {
+  margin-bottom: 5px;
+
   font-weight: $font-weight-regular;
   font-size: $font-size-14;
   line-height: 1.21;
-  margin-bottom: 5px;
 }
 
 .place {
@@ -89,11 +100,13 @@ img {
 }
 
 .card-foto {
+  margin-bottom: 5px;
+
   width: 128px;
   height: 161px;
+
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
-  margin-bottom: 5px;
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -116,25 +129,25 @@ img {
 
 .events {
   display: block;
-  width: calc((100% - 4 * 7px) / 2);
   margin: 7px;
   margin-bottom: 42px;
 
+  width: calc((100% - 4 * 7px) / 2);
+
   @media screen and (min-width: 768px) {
-    width: calc((100% - 6 * 13.5px) / 3);
     margin: 13.5px;
+    width: calc((100% - 6 * 13.5px) / 3);
   }
 
   @media screen and (min-width: 1280px) {
-    width: calc((100% - 8 * 35px) / 4);
     margin: 35px;
+    width: calc((100% - 8 * 35px) / 4);
   }
 }
 
 .card {
   text-align: center;
   width: 138px;
-  // height: 100%;
 
   @media screen and (min-width: 768px) {
     width: 180px;

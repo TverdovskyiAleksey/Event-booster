@@ -7,10 +7,10 @@
 }
 
 .tui-ico-first,
-    .tui-ico-last,
-    .tui-ico-ellip,
-    // .tui-ico-prev,
-    .tui-ico-ellipsis {
+  .tui-ico-last,
+  .tui-ico-ellip,
+  // .tui-ico-prev,
+  .tui-ico-ellipsis {
   overflow: hidden;
 }
 .tui-pagination {
@@ -76,11 +76,11 @@
   border-right: 1px solid $title-text-color;
 }
 .tui-pagination .tui-first,
-    // .tui-pagination .tui-prev,
-    // .tui-pagination .tui-next,
-    .tui-pagination .tui-last,
-    .tui-pagination .tui-prev-is-ellip,
-    .tui-pagination .tui-next-is-ellip {
+  // .tui-pagination .tui-prev,
+  // .tui-pagination .tui-next,
+  .tui-pagination .tui-last,
+  .tui-pagination .tui-prev-is-ellip,
+  .tui-pagination .tui-next-is-ellip {
   overflow: hidden;
   height: 26px;
   padding: 0;
@@ -101,10 +101,10 @@
 //   border-left: 0;
 // }
 .tui-pagination .tui-ico-first,
-    // .tui-pagination .tui-ico-prev,
-    .tui-pagination .tui-ico-ellip,
-    .tui-pagination .tui-ico-last,
-    .tui-pagination .tui-ico-ellip {
+  // .tui-pagination .tui-ico-prev,
+  .tui-pagination .tui-ico-ellip,
+  .tui-pagination .tui-ico-last,
+  .tui-pagination .tui-ico-ellip {
   background: url('../images/sp_btn.png') no-repeat 0 0;
   display: inline-block;
   vertical-align: middle;
