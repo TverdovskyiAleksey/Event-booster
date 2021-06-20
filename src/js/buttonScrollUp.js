@@ -1,14 +1,13 @@
 import getRefs from './get-Refs';
 const refs = getRefs();
-// refs.buttonScrollUp.addEventListener('click', onScroll);
 
-// function onScroll() {
-//   refs.eventList.scrollIntoView({
-//     behavior: 'smooth',
-//     block: 'start',
-//   });
-// }
-
+refs.buttonScrollUp.addEventListener('click', onButtonScrollUpClick);
+function onButtonScrollUpClick() {
+  window.scrollTo({
+    top: 1,
+    behavior: 'smooth',
+  });
+}
 window.onscroll = function () {
   const scrolled = window.pageYOffset || refs.searchingBlock.scrollTop;
   if (scrolled > 400) {
