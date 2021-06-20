@@ -15,24 +15,36 @@
   position: relative;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 500px;
-  margin-top: -250px;
-  margin-left: -250px;
+  width: 300px;
+  height: 300px;
+  margin-top: -150px;
+  margin-left: -150px;
   text-align: center;
-  // animation: preloader-rotate 2s infinite linear;
+  animation: preloader-rotate 2s infinite linear;
   color: $title-text-color;
   fill: currentColor;
   fill: $title-text-color;
   stroke: $title-text-color; /* цвет обводки */
   stroke-width: 1px;
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+  }
 }
 
-// @keyframes preloader-rotate {
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .loaded_hiding .preloader {
   transition: 2s opacity;
