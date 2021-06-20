@@ -1,30 +1,31 @@
-<img class="logos" src="{{_embedded.events.[0].images.0.url}}" alt="logo-event">
-<div class="cards">
+<img class='logos' src='{{images.0.url}}' alt='logo-event' />
+<div class='cards'>
 
-    <div class="info-img">
-        <img class="demo" src="{{_embedded.events.[0].images.0.url}}" alt="event">
-    </div>
+  <div class='info-img'>
+    <img class='demo' src='{{images.0.url}}' alt='event' />
+  </div>
 
-    <div class="info-card">
-        <span class="title-card">INFO</span>
-        <p class="info-text">
-            Atlas Weekend is the largest music festival
-            in Ukraine.More than 200 artists will create
-            a proper music festival atmosphere on 10 stages
-        </p>
-        <span class="title-card">WHEN</span>
-        <p class="info-text">{{_embedded.events.[0].dates.start.localDate}} <br>
-            {{_embedded.events.[0].dates.start.localTime}}</p>
-        <span class="title-card">WHERE</span>
-        <p class="info-text">{{_embedded.events.[0].place.country.name}} <br> {{_embedded.events.[0].place.city.name}}
-        </p>
-        <span class="title-card">WHO</span>
-        <p class="info-text">{{_embedded.events.[0].name}}</p>
-        <span class="title-card">PRICES</span>
-        <p class="info-text">Standart 300-500 UAH</p>
-        <button class="modal-button">BUY TICKETS</button>
-        <p class="info-text">VIP 1000-1500 UAH</p>
-        <button class="modal-button-vip">BUY TICKETS</button>
-    </div>
+  <div class='info-card'>
+    <span class='title-card'>INFO</span>
+    <p class='info-text'>
+      {{pleaseNote}}
+    </p>
+    <span class='title-card'>WHEN</span>
+    <p class='info-text'>{{dates.start.localDate}}
+      <br />
+      {{dates.start.localTime}}</p>
+    <span class='title-card'>WHERE</span>
+    <p class='info-text'>{{dates.timezone}}
+      <br />
+      {{place.city.name}}
+    </p>
+    <span class='title-card'>WHO</span>
+    <p class='info-text'>{{name}}</p>
+    <span class='title-card'>PRICES</span>
+    <p class='info-text'>Standart 300-500 UAH</p>
+    <button class='modal-button'>BUY TICKETS</button>
+    <p class='info-text'>VIP 1000-1500 UAH</p>
+    <button class='modal-button-vip'>BUY TICKETS</button>
+  </div>
 </div>
-<button class="btn-more">MORE FROM THIS AUTHOR</button>
+<button class='btn-more'>MORE FROM THIS AUTHOR</button>
