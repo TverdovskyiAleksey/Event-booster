@@ -6,6 +6,8 @@ export default function getRefs() {
     dropList: document.querySelector('.js-dropdown'),
     dropBgColor: document.querySelector('.country-block '),
     pagination: document.querySelector('.tui-pagination'),
+    buttonScrollUp: document.querySelector('.button-scroll-up'),
+    searchingBlock: document.querySelector('.searching-block'),
     switchTogle: document.querySelector('#theme-switch-toggle'),
     bodyTheme: document.querySelector('body'),
   };
