@@ -3,24 +3,19 @@ import getRefs from './get-Refs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
-import selectCountry from '/js/selectCountry.js';
+import selectCountry from '/js/selectCountry';
+import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
-refs.inputCountryForm.addEventListener('click', debounce(onInputCountry, 500));
+refs.dropList.addEventListener('click', e => selectCountry(e));
 
 if (window.innerWidth > 767 && window.innerWidth < 1280) {
   newsApiService.eventPageQuantity += 1;
   option.itemsPerPage += 1;
 }
-
-refs.dropList.hidden = true;
-refs.dropBgColor.hidden = true;
-refs.dropList.addEventListener('click', e => {
-  selectCountry(e, refs.dropList);
-});
 
 if (newsApiService.query == 0) {
   randomList();
@@ -67,13 +62,35 @@ function clearContainer() {
 
 export { clearContainer, fetchHits, newsApiService, randomList };
 
-function onInputCountry(e) {
-  e.preventDefault();
-  dropListdMarkup();
+
+dropdown(refs.selectCountryBtn);
+
+refs.countryListDouble.innerHTML = countryList({ countries });
+
+function dropdown(element) {
+  element.addEventListener('click', function () {
+    element.classList.toggle('active');
+
+    if (element.classList.contains('active')) {
+      refs.countryListDouble.addEventListener('click', function (e) {
+        closeTargetElm(e.target, element);
+      });
+    } else {
+      refs.countryListDouble.removeEventListener('click', function (e) {
+        closeTargetElm(e.target, element);
+      });
+    }
+  });
 }
 
-function dropListdMarkup() {
-  refs.dropList.hidden = false;
-  refs.dropBgColor.hidden = false;
-  refs.dropList.innerHTML = countryList();
+function closeTargetElm(target, element) {
+  if (target !== element) {
+    element.classList.remove('active');
+    target
+      .closest('ul')
+      .querySelectorAll('li')
+      .forEach(el => el.classList.remove('current'));
+    target.classList.add('current');
+    element.innerText = target.innerText;
+  }
 }

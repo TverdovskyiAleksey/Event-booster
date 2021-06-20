@@ -5,13 +5,9 @@ import NewsApiService from './apiService';
 const refs = getRefs();
 const newsApiService = new NewsApiService();
 
-export default function selectCountry(e, list) {
+export default function selectCountry(e) {
   if (e.target.nodeName === 'LI') {
-    newsApiService.query = e.target.dataset.value;
-    refs.inputCountryForm.querySelector('input').placeholder = e.target.textContent;
-    list.innerHTML = '';
-    list.hidden = true;
-    refs.dropBgColor.hidden = true;
+    newsApiService.query = e.target.dataset.countryCode;
     fetchHits();
   }
 }
@@ -20,10 +16,10 @@ function fetchHits() {
   newsApiService.fetchByCountries()
     .then(events => {
       if (!events) {
-        return
+        return;
       }
       clearContainer();
-    appendMarkup(events);
+      appendMarkup(events);
     })
 }
 
