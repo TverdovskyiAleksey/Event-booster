@@ -169,3 +169,46 @@
     color: $primary-text-color;
   }
 }
+
+.button-scroll-up {
+  // visibility: hidden;
+  // opacity: 0;
+  display: none;
+  position: fixed;
+  z-index: 12;
+  right: 7%;
+  bottom: 30px;
+  margin: 0;
+  padding: 0;
+  border: transparent;
+  outline: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $modal-bg-color;
+  background-color: $search-bg-color;
+  transition: color 250ms $timing-function, transform 250ms $timing-function;
+  &:hover,
+  &:focus {
+    color: $title-text-color;
+    transform: scale(0.91);
+    @media screen and (min-width: 1200px) {
+      transform: scale(1.07);
+    }
+  }
+}
+.button-scroll-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 60px;
+    height: 60px;
+  }
+}

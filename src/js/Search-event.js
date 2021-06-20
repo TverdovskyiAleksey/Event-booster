@@ -6,9 +6,11 @@ import NewsApiService from './apiService';
 import selectCountry from '/js/selectCountry';
 import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
+import onSwitchChange from './switchTogle';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
+refs.switchTogle.addEventListener('change', onSwitchChange);
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
 refs.dropList.addEventListener('click', e => selectCountry(e));
 
