@@ -1,0 +1,214 @@
+.logo-header {
+  position: absolute;
+  top: 0px;
+}
+
+.header-txt {
+  padding-top: 78px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 212px;
+
+  font-weight: $font-weight-black;
+  font-size: $font-size-18;
+  line-height: 1.22;
+  text-align: center;
+
+  color: $title-text-color;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    width: 353px;
+    font-size: $font-size-30;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 589px;
+    font-size: $font-size-50;
+    white-space: inherit;
+  }
+}
+
+.background-header {
+  width: 100%;
+  height: 364px;
+
+  background: url(../images/bg-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and(min-width: 768px) {
+    background: url(../images/bg-tablet.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 auto;
+
+    max-width: 1280px;
+    height: 446px;
+    background: url(../images/pic-desctop.jpg);
+  }
+}
+
+// country
+.choose-input {
+  z-index: 99;
+  display: block;
+  width: 100%;
+  padding: 10px 30px;
+  color: $accent-color;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 20px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  background: $search-bg-color;
+  backdrop-filter: blur(20px);
+
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  position: relative;
+  margin-top: 25px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px $title-text-color;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 270px;
+    margin-top: 0;
+  }
+}
+
+.choose-country {
+  display: block;
+  text-align: start;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transform: translateY(-50%);
+    display: block;
+    width: 12px;
+    height: 12px;
+    top: auto;
+    bottom: -10px;
+    right: -5px;
+    width: 225px;
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    transform: translateY(-50%) scalex(0);
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  }
+
+  &.active {
+    outline: none;
+    margin-bottom: 20px;
+
+    &::before {
+      transform: translateY(-50%) scalex(1);
+    }
+  }
+
+  &.active ~ .select-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.country-list {
+  width: 270px;
+  margin-left: -30px;
+  height: 210px;
+  overflow-y: scroll;
+  color: #cccccc;
+  transform: scaleY(1);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 20px;
+    border-radius: 5px;
+    background-color: $accent-color;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .choose-input :not(.active) + & {
+    padding-top: 0;
+    height: 0;
+    transform: scaleY(0);
+  }
+}
+
+.country-button {
+  height: 25px;
+  width: 100%;
+  color: $accent-color;
+  padding-left: 30px;
+
+  &:hover,
+  &:focus,
+  &.active,
+  &.current {
+    outline: none;
+    background: $title-text-color;
+    color: $primary-text-color;
+  }
+}
+
+.button-scroll-up {
+  // visibility: hidden;
+  // opacity: 0;
+  display: none;
+  position: fixed;
+  z-index: 12;
+  right: 7%;
+  bottom: 30px;
+  margin: 0;
+  padding: 0;
+  border: transparent;
+  outline: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $modal-bg-color;
+  background-color: $search-bg-color;
+  transition: color 250ms $timing-function, transform 250ms $timing-function;
+  &:hover,
+  &:focus {
+    color: $title-text-color;
+    transform: scale(0.91);
+    @media screen and (min-width: 1200px) {
+      transform: scale(1.07);
+    }
+  }
+}
+.button-scroll-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 60px;
+    height: 60px;
+  }
+}

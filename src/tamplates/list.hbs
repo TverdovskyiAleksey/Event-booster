@@ -1,0 +1,16 @@
+{{#each this}}
+<li class='events'>
+    <div class="card">
+        <svg class="card-svg" width="109" height="101"></svg>       
+        <img class="card-foto" src="{{images.0.url}}" width="128" height="161" alt=""/>        
+        <div class="info">
+            <p class="team">{{name}}</p>
+            <p class="start-date">{{dates.start.localDate}}</p>
+            <div class="icon-place">
+                <p class="place">{{_embedded.venues.0.name}}</p>
+            </div>          
+        </div>
+    </div>
+</li>
+{{/each}}
+

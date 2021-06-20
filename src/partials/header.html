@@ -1,0 +1,69 @@
+<div class="header-img">
+  <section>
+    <div class="background-header" id="up">
+      <div class="toolbar">
+        <div class="theme-switch">
+          <div class="theme-switch__control">
+            <input
+              class="theme-switch__toggle"
+              type="checkbox"
+              name="theme"
+              id="theme-switch-toggle"
+              aria-label="Переключить между тёмной и светлой темой"
+            />
+            <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+            </label>
+            <div aria-hidden="true" class="theme-switch__marker"></div>
+          </div>
+        </div>
+      </div>
+      <a href="" class="logo-header">
+        <picture>
+          <source
+            srcset="./images/logo-desktop.png 1x"
+            media="(min-width:1280px)"
+            type="image/png"
+          />
+          <source srcset="./images/logo-tablet.png 1x" media="(min-width:768px)" type="image/png" />
+          <source srcset="./images/logo-mobile.png 1x" media="(max-width:767px)" type="image/png" />
+          <img class="logo-img" src="./images/logo-mobile.png" alt="" />
+        </picture>
+      </a>
+      <h1 class="header-txt">FIND BEST EVENTS AROUND THE WORLD</h1>
+      <div class="searching-block container">
+        <form class="input-form search-form js-search-form">
+          <div class="input-block">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Start searching"
+              autocomplete="off"
+            />
+            <svg width="12" height="12">
+              <use href="./images/icons/sprite.svg#icon-magnifier"></use>
+            </svg>
+          </div>
+        </form>
+        <div>
+          <div class='choose-input'>
+            <span class='choose-country' id='select-country-btn'>Choose country</span>
+            <ul class='country-list js-dropdown'></ul>
+            <svg class="select-icon" width=15 height=10>
+              <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- <a class="button-scroll-up" href="#up">
+        <svg class="button-scroll-icon">
+          <use href="./images/icons/sprite.svg#icon-circle-up"></use>
+        </svg>
+      </a> -->
+      <button class="button-scroll-up">
+        <svg class="button-scroll-icon">
+          <use href="./images/icons/sprite.svg#icon-circle-up"></use>
+        </svg>
+      </button>
+    </div>
+  </section>
+</div>

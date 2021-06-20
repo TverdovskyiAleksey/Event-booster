@@ -1,0 +1,149 @@
+.form-control {
+  padding: 10px 30px;
+
+  width: 270px;
+  height: 40px;
+
+  font-size: $font-size-16;
+  line-height: 1.25;
+  border-radius: 20px;
+
+  background: $search-bg-color;
+  color: $primary-text-color;
+  backdrop-filter: blur(20px);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1px 1px $title-text-color;
+    outline: transparent;
+  }
+
+  &:focus-within ~ svg {
+    opacity: 0;
+  }
+}
+
+::placeholder {
+  color: $accent-color;
+}
+
+.input-block {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 270px;
+  z-index: 2;
+}
+.input-form svg,
+.choose-input svg {
+  position: absolute;
+  top: 14px;
+  right: 30px;
+}
+@media screen and(max-width: 767px) {
+  .search-form {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .searching-block {
+    display: flex;
+    margin-top: 27px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+  .search-form {
+    margin-right: 30px;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.team {
+  margin-bottom: 5px;
+
+  font-weight: $font-weight-bold;
+  font-size: $font-size-14;
+  line-height: 1.21;
+
+  color: $title-text-color;
+}
+
+.start-date {
+  margin-bottom: 5px;
+
+  font-weight: $font-weight-regular;
+  font-size: $font-size-14;
+  line-height: 1.21;
+}
+
+.place {
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-12;
+  line-height: 1.25;
+}
+
+.card-foto {
+  margin-bottom: 5px;
+
+  width: 128px;
+  height: 161px;
+
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+    height: 227px;
+  }
+}
+
+.js-event-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -7px;
+
+  @media screen and (min-width: 768px) {
+    margin: -13.5px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: -35px;
+  }
+}
+
+.events {
+  display: block;
+  margin: 7px;
+  margin-bottom: 42px;
+
+  width: calc((100% - 4 * 7px) / 2);
+
+  @media screen and (min-width: 768px) {
+    margin: 13.5px;
+    width: calc((100% - 6 * 13.5px) / 3);
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 35px;
+    width: calc((100% - 8 * 35px) / 4);
+  }
+}
+
+.card {
+  text-align: center;
+  width: 138px;
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+  }
+}
