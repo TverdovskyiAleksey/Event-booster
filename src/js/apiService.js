@@ -38,11 +38,11 @@ export default class NewApiService {
 
     fetchByCountries() {
     return fetch(`${BASE_URL}events.json?countryCode=${this.searchQuery}&apikey=${KEY}`)
-            .then(r => r.json())
-            .then(({ _embedded }) => {
-                return  _embedded.events;
-            })
-            .catch(error => error);
+      .then(r => r.json())
+      .then(({ _embedded }) => {
+          return  _embedded.events;
+      })
+      .catch(error => console.log(error));
     }
     
     resetPage() {

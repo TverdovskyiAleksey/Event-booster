@@ -1,6 +1,7 @@
 import getRefs from './get-Refs';
 import eventTLP from '../tamplates/list.hbs';
 import NewsApiService from './apiService';
+import onFetchError from './errorFetch';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
@@ -16,6 +17,7 @@ function fetchHits() {
   newsApiService.fetchByCountries()
     .then(events => {
       if (!events) {
+        onFetchError();
         return;
       }
       clearContainer();
