@@ -10,5 +10,10 @@ export default function getRefs() {
     searchingBlock: document.querySelector('.searching-block'),
     switchTogle: document.querySelector('#theme-switch-toggle'),
     bodyTheme: document.querySelector('body'),
+    openModalBtn: document.querySelector('.list'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+    lightBoxOverlay: document.querySelector('.backdrop'),
+    cardMurkup: document.querySelector('.modal-form'),
   };
 }

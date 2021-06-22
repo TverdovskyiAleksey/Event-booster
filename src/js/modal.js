@@ -1,19 +1,9 @@
-import debounce from 'lodash.debounce';
 import cardTmpl from '../tamplates/cardTpl';
 import NewsApiService from './apiService';
+import { eventSettings } from './eventSettings';
+import getRefs from './getRefs';
 
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const KEY = 'w2rp7JjXdCoAjtGRKPPDY9cIXNULMVug';
-
-const refs = {
-  openModalBtn: document.querySelector('.list'),
-  closeModalBtn: document.querySelector('[data-modal-close]'),
-  modal: document.querySelector('[data-modal]'),
-  lightBoxOverlay: document.querySelector('.backdrop'),
-  bodyEl: document.querySelector('body'),
-
-  cardMurkup: document.querySelector('.modal-form'),
-};
+const refs = getRefs();
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModalBtmClick);
@@ -24,20 +14,18 @@ function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 
-let eventid;
+
 function onOpenModal(e) {
   const li = e.target.closest('li');
-  if (li.nodeName !== 'LI') return;
-  eventid = li.dataset.eventid;
-  refs.bodyEl.classList.add('modal-is-open');
+  if (!li) return;
+  newsApiService.query = li.dataset.eventid;
+  refs.bodyTheme.classList.add('modal-is-open');
   window.addEventListener('keydown', onEsckeyPress);
   toggleModal();
 
-  fetchEventsById()
-    .then(renderMurkupCard)
-    .catch(error => {
-      console.log(error);
-    });
+  newsApiService
+    .fetchEventsById()
+    .then(e => renderMurkupCard(e));
 }
 
 function onCloseModalBtmClick() {
@@ -45,33 +33,25 @@ function onCloseModalBtmClick() {
 }
 
 function onCloseModal() {
-  refs.bodyEl.classList.remove('modal-is-open');
+  refs.bodyTheme.classList.remove('modal-is-open');
   window.removeEventListener('keydown', onEsckeyPress);
   toggleModal();
   refs.cardMurkup.innerHTML = '';
 }
 
-function onBackdropClick(evt) {
-  if (evt.currentTarget === evt.target) {
+function onBackdropClick(e) {
+  if (e.currentTarget === e.target) {
     onCloseModal();
   }
 }
 
-function onEsckeyPress(evt) {
-  if (evt.code === 'Escape') {
+function onEsckeyPress(e) {
+  if (e.code === 'Escape') {
     onCloseModal();
   }
 }
 
-function fetchEventsById() {
-  //   return fetch(`${BASE_URL}events.json?id=${eventid}&apikey=${KEY}`).then(response => {
-  return fetch(`${BASE_URL}events/${eventid}.json?&apikey=${KEY}`).then(response => {
-    return response.json();
-  });
-}
-
-function renderMurkupCard(ent) {
-  const markup = cardTmpl(ent);
-  //   console.log(markup);
+function renderMurkupCard(e) {
+  const markup = cardTmpl(eventSettings(e));
   refs.cardMurkup.innerHTML = markup;
 }

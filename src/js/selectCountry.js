@@ -1,7 +1,8 @@
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 import eventTLP from '../tamplates/list.hbs';
 import NewsApiService from './apiService';
 import onFetchError from './errorFetch';
+import { eventSettings } from './eventSettings';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
@@ -26,7 +27,7 @@ function fetchHits() {
 }
 
 function appendMarkup(events) { 
-  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events));
+  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events.map(eventSettings)));
 }
 
 function clearContainer() {

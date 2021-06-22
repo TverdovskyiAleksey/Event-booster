@@ -44,6 +44,11 @@ export default class NewApiService {
       })
       .catch(error => console.log(error));
     }
+
+  fetchEventsById() {
+    return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`)
+      .then(r => r.json());
+}
     
     resetPage() {
         this.page = 1;

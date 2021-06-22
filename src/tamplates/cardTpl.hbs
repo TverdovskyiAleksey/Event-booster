@@ -1,8 +1,8 @@
-<img class='logos' src='{{images.0.url}}' alt='logo-event' />
+<img class='logos' src='{{image.small}}' alt='logo-event' />
 <div class='cards'>
 
   <div class='info-img'>
-    <img class='demo' src='{{images.0.url}}' alt='event' />
+    <img class='demo' src='{{image.big}}' alt='event' />
   </div>
 
   <div class='info-card'>
@@ -11,21 +11,24 @@
       {{pleaseNote}}
     </p>
     <span class='title-card'>WHEN</span>
-    <p class='info-text'>{{dates.start.localDate}}
+    <p class='info-text'>{{date}}
       <br />
-      {{dates.start.localTime}}</p>
+      {{time}} ({{timezone}})
+    </p>
     <span class='title-card'>WHERE</span>
-    <p class='info-text'>{{dates.timezone}}
+    <p class='info-text'>{{city}}, {{country}}
       <br />
-      {{place.city.name}}
+      {{place}}
     </p>
     <span class='title-card'>WHO</span>
     <p class='info-text'>{{name}}</p>
+    {{#if prices}}
     <span class='title-card'>PRICES</span>
-    <p class='info-text'>Standart 300-500 UAH</p>
+    {{#each prices}}
+    <p class='info-text'>{{type}} {{min}} - {{max}} {{currency}}</p>
     <button class='modal-button'>BUY TICKETS</button>
-    <p class='info-text'>VIP 1000-1500 UAH</p>
-    <button class='modal-button-vip'>BUY TICKETS</button>
+    {{/each}}
+    {{/if}}
   </div>
 </div>
 <button class='btn-more'>MORE FROM THIS AUTHOR</button>

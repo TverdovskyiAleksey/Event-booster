@@ -1,4 +1,4 @@
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
