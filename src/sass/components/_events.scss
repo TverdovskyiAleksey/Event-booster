@@ -57,10 +57,7 @@
   position: relative;
   text-align: center;
 }
-.card:hover {
-  transform: scale(1.03);
-  transition: transform $animation-duration $timing-function;
-}
+
 .card-svg {
   position: absolute;
   top: 0%;

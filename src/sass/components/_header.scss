@@ -189,12 +189,12 @@
   outline: transparent;
   border-radius: 50%;
   cursor: pointer;
-  color: $title-text-color;
+  color: $modal-bg-color;
   background-color: $search-bg-color;
   transition: color 250ms $timing-function, transform 250ms $timing-function;
   &:hover,
   &:focus {
-    color: $accent-modal-color;
+    color: $title-text-color;
     transform: scale(0.91);
     @media screen and (min-width: 1200px) {
       transform: scale(1.07);
