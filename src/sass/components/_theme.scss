@@ -1,4 +1,52 @@
 body.light-theme {
+  height: 100%;
+  color: #0e0e0e;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fff2fd;
+  background-image: url(../images/background-body/mobile/light-bg-body-mobile.svg);
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/background-body/tablet/light-bg-body-tablet.svg);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/background-body/desktop/light-bg-body-desktop.svg);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1500px) {
+    background-size: contain;
+  }
+}
+body.dark-theme {
+  height: 100%;
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0e0e0e;
+  background-image: url(../images/background-body/noise-body.svg),
+    url(../images/background-body/mobile/bg-body-mobile.svg);
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/background-body/noise-body.svg),
+      url(../images/background-body/tablet/bg-body-tablet.svg);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/background-body/noise-body.svg),
+      url(../images/background-body/desktop/bg-body-desktop.svg);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1500px) {
+    background-size: contain;
+  }
   background-color: $primary-text-color;
   color: $modal-text-color;
 }
