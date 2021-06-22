@@ -1,4 +1,4 @@
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 const refs = getRefs();
 
 refs.buttonScrollUp.addEventListener('click', onButtonScrollUpClick);
