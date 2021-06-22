@@ -39,7 +39,7 @@ function onCloseModal() {
 }
 
 function onBackdropClick(e) {
-  if (e.currentTarget === evt.target) {
+  if (e.currentTarget === e.target) {
     onCloseModal();
   }
 }
