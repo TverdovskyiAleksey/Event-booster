@@ -44,6 +44,11 @@ export default class NewApiService {
       .catch(error => console.log(error));
   }
 
+  fetchEventsById() {
+    return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`)
+      .then(r => r.json());
+  }
+  
   fetchByDifferentParam() {
     if (this.searchQuery & this.countryCode) {
       return fetch(
@@ -61,15 +66,6 @@ export default class NewApiService {
       );
     }
   }
-
-  // fetchByCountries() {
-  //   return fetch(`${BASE_URL}events.json?countryCode=${this.searchQuery}&apikey=${KEY}`)
-  //     .then(r => r.json())
-  //     .then(({ _embedded }) => {
-  //       return _embedded.events;
-  //     })
-  //     .catch(error => console.log(error));
-  // }
 
   resetPage() {
     this.page = 1;

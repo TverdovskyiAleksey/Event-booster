@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
@@ -7,9 +7,11 @@ import NewsApiService from './apiService';
 import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
 import onSwitchChange from './switchTogle';
+import { eventSettings } from './eventSettings';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
+
 refs.switchTogle.addEventListener('change', onSwitchChange);
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
 refs.dropList.addEventListener('click', e => selectCountry(e));
@@ -57,7 +59,7 @@ function fetchHits() {
 }
 
 function appendMarkup(events) {
-  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events));
+  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events.map(eventSettings)));
 }
 
 function clearContainer() {
