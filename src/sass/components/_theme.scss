@@ -47,15 +47,23 @@ body.dark-theme {
   @media screen and (min-width: 1500px) {
     background-size: contain;
   }
+  background-color: $primary-text-color;
+  color: $modal-text-color;
+}
+body.dark-theme {
+  background-color: $modal-text-color;
+  color: $primary-text-color;
+}
+.tui-pagination.dark-theme * {
+  color: $primary-text-color;
+}
+.tui-pagination.light-theme * {
+  color: $svg-color;
 }
 .toolbar {
   display: flex;
   justify-content: flex-end;
   padding: 16px 24px;
-}
-.theme-switch {
-  display: flex;
-  align-items: center;
 }
 
 .theme-switch__icon {
@@ -97,7 +105,7 @@ body.dark-theme {
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #333;
+  background-color: $modal-text-color;
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -105,7 +113,7 @@ body.dark-theme {
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
+  background-color: $title-text-color;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -117,7 +125,7 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
+  background-color: $primary-text-color;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -126,5 +134,5 @@ body.dark-theme {
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #dc56c5;
+  box-shadow: 0 0 0 3px $title-text-color;
 }
