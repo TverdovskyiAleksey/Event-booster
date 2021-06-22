@@ -3,7 +3,7 @@ import getRefs from './get-Refs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
-import selectCountry from '/js/selectCountry';
+// import selectCountry from '/js/selectCountry';
 import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
 import onSwitchChange from './switchTogle';
@@ -19,7 +19,8 @@ if (window.innerWidth > 767 && window.innerWidth < 1280) {
   option.itemsPerPage += 1;
 }
 
-if (newsApiService.query == 0) {
+if (!newsApiService.query & !newsApiService.countryCode) {
+  // if (newsApiService.query == 0) {
   randomList();
   startPaginationRandom();
 }
@@ -48,6 +49,7 @@ function fetchHits() {
   newsApiService
     .fetchArticles()
     .then(events => {
+      clearContainer();
       appendMarkup(events);
       //   startPagination();
     })
@@ -63,7 +65,6 @@ function clearContainer() {
 }
 
 export { clearContainer, fetchHits, newsApiService, randomList };
-
 
 dropdown(refs.selectCountryBtn);
 
@@ -94,5 +95,14 @@ function closeTargetElm(target, element) {
       .forEach(el => el.classList.remove('current'));
     target.classList.add('current');
     element.innerText = target.innerText;
+  }
+}
+
+function selectCountry(e) {
+  if (e.target.nodeName === 'LI') {
+    newsApiService.countryCode = e.target.dataset.countryCode;
+
+    // console.log(newsApiService.countryCode);
+    fetchHits();
   }
 }
