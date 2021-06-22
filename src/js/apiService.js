@@ -1,5 +1,6 @@
 import { BASE_URL } from './baseData';
 import { KEY } from './baseData';
+import onFetchError from './errorFetch';
 
 export default class NewApiService {
   constructor() {
@@ -12,24 +13,18 @@ export default class NewApiService {
   }
 
   fetchArticles() {
-    return (
-      fetch(
-        `${BASE_URL}events.json?keyword=${this.searchQuery}&countryCode=${this.countryCode}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-      )
-        // return this.fetchByDifferentParam()
-        .then(r => r.json())
-        .then(data => {
-          this.totalElements = data.page.totalElements;
-          return data._embedded.events;
-        })
-    );
-    // .then(events => {
-    //   if (!events) {
-    //     onFetchError();
-    //     return;
-    //   }
-    // });
-    // .catch(error => console.log(error))
+    return fetch(
+      `${BASE_URL}events.json?keyword=${this.searchQuery}&countryCode=${this.countryCode}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
+    )
+      .then(r => r.json())
+      .then(data => {
+        this.totalElements = data.page.totalElements;
+        if (!data._embedded) {
+          onFetchError();
+          return;
+        }
+        return data._embedded.events;
+      });
   }
 
   fetchRandom() {
@@ -45,26 +40,7 @@ export default class NewApiService {
   }
 
   fetchEventsById() {
-    return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`)
-      .then(r => r.json());
-  }
-  
-  fetchByDifferentParam() {
-    if (this.searchQuery & this.countryCode) {
-      return fetch(
-        `${BASE_URL}events.json?keyword=${this.searchQuery}&countryCode=${this.countryCode}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-      );
-    }
-    if (!this.searchQuery) {
-      return fetch(
-        `${BASE_URL}events.json?countryCode=${this.countryCode}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-      );
-    }
-    if (!this.countryCode) {
-      return fetch(
-        `${BASE_URL}events.json?keyword=${this.searchQuery}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-      );
-    }
+    return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`).then(r => r.json());
   }
 
   resetPage() {
