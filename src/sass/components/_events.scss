@@ -51,6 +51,10 @@
     margin: 0px 28px 50px 28px;
     width: calc((100% - 28px * 8) / 4);
   }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .card {
