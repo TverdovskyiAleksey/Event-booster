@@ -8,6 +8,8 @@ const refs = getRefs();
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModalBtmClick);
 refs.lightBoxOverlay.addEventListener('click', onBackdropClick);
+refs.moreBtn.addEventListener('click', onShowTheRestOfTheArtistEvents);
+
 const newsApiService = new NewsApiService();
 
 function toggleModal() {
@@ -54,3 +56,7 @@ function renderMurkupCard(e) {
   const markup = cardTmpl(eventSettings(e));
   refs.cardMurkup.innerHTML = markup;
 }
+
+function onShowTheRestOfTheArtistEvents () {
+    onCloseModal();
+    };

@@ -15,5 +15,6 @@ export default function getRefs() {
     modal: document.querySelector('[data-modal]'),
     lightBoxOverlay: document.querySelector('.backdrop'),
     cardMurkup: document.querySelector('.modal-form'),
+    moreBtn: document.querySelector('.btn-more'),
   };
 }
