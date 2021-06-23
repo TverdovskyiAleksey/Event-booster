@@ -22,9 +22,8 @@ if (window.innerWidth > 767 && window.innerWidth < 1280) {
 }
 
 if (!newsApiService.query & !newsApiService.countryCode) {
-  // if (newsApiService.query == 0) {
   randomList();
-  startPaginationRandom();
+  // startPaginationRandom();
 }
 
 function onInput(e) {
@@ -34,7 +33,7 @@ function onInput(e) {
   clearContainer();
 
   fetchHits();
-  startPagination();
+  // startPagination();
 }
 
 function randomList() {
@@ -42,7 +41,7 @@ function randomList() {
     .fetchRandom()
     .then(events => {
       appendMarkup(events);
-      //   startPaginationRandom();
+      startPaginationRandom();
     })
     .catch(error => console.log(error));
 }
@@ -52,8 +51,9 @@ function fetchHits() {
     .fetchArticles()
     .then(events => {
       clearContainer();
+
       appendMarkup(events);
-      //   startPagination();
+      startPagination();
     })
     .catch(error => console.log(error));
 }
@@ -103,8 +103,6 @@ function closeTargetElm(target, element) {
 function selectCountry(e) {
   if (e.target.nodeName === 'LI') {
     newsApiService.countryCode = e.target.dataset.countryCode;
-
-    // console.log(newsApiService.countryCode);
     fetchHits();
   }
 }
