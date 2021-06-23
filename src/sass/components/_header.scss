@@ -40,19 +40,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media screen and (min-width: 400px) and (max-width: 767px) {
-    height: calc(364px + (4em + 4vw));
-  }
-
   @media screen and(min-width: 768px) {
     background: url(../images/bg-tablet.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  @media screen and (min-width: 950px) and (max-width: 1279px) {
-    height: calc(364px + (3em + 3vw));
   }
 
   @media screen and (min-width: 1280px) {
@@ -64,6 +56,7 @@
   }
 }
 
+// country
 .choose-input {
   z-index: 2;
   display: block;
@@ -178,6 +171,8 @@
 }
 
 .button-scroll-up {
+  // visibility: hidden;
+  // opacity: 0;
   display: none;
   position: fixed;
   z-index: 12;
@@ -189,12 +184,12 @@
   outline: transparent;
   border-radius: 50%;
   cursor: pointer;
-  color: $modal-bg-color;
+  color: $title-text-color;
   background-color: $search-bg-color;
   transition: color 250ms $timing-function, transform 250ms $timing-function;
   &:hover,
   &:focus {
-    color: $title-text-color;
+    color: $accent-modal-color;
     transform: scale(0.91);
     @media screen and (min-width: 1200px) {
       transform: scale(1.07);
