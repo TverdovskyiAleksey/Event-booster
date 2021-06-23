@@ -10,5 +10,6 @@ export default function getRefs() {
     searchingBlock: document.querySelector('.searching-block'),
     switchTogle: document.querySelector('#theme-switch-toggle'),
     bodyTheme: document.querySelector('body'),
+    moreBtn: document.querySelector('.btn-more'),
   };
 }

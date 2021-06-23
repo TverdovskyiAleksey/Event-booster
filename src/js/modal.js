@@ -2,6 +2,7 @@ import debounce from 'lodash.debounce';
 import cardTmpl from '../tamplates/cardTpl';
 import NewsApiService from './apiService';
 
+
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const KEY = 'w2rp7JjXdCoAjtGRKPPDY9cIXNULMVug';
 
@@ -11,13 +12,17 @@ const refs = {
   modal: document.querySelector('[data-modal]'),
   lightBoxOverlay: document.querySelector('.backdrop'),
   bodyEl: document.querySelector('body'),
-
   cardMurkup: document.querySelector('.modal-form'),
+  moreBtn : document.querySelector('.btn-more'),
 };
+
+  
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModalBtmClick);
 refs.lightBoxOverlay.addEventListener('click', onBackdropClick);
+refs.moreBtn.addEventListener('click', onShowTheRestOfTheArtistEvents);
+
 const newsApiService = new NewsApiService();
 
 function toggleModal() {
@@ -75,3 +80,10 @@ function renderMurkupCard(ent) {
   //   console.log(markup);
   refs.cardMurkup.innerHTML = markup;
 }
+
+
+
+function onShowTheRestOfTheArtistEvents (event) {
+    onCloseModal();
+    };
+
