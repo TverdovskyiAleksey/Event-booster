@@ -22,6 +22,7 @@ body.light-theme {
     background-size: contain;
   }
 }
+
 body.dark-theme {
   height: 100%;
   color: $primary-text-color;
@@ -50,20 +51,12 @@ body.dark-theme {
   background-color: $primary-text-color;
   color: $modal-text-color;
 }
+
 body.dark-theme {
   background-color: $modal-text-color;
   color: $primary-text-color;
 }
-.tui-pagination.dark-theme * {
-  color: $primary-text-color;
-}
-.tui-pagination.light-theme * {
-  color: $svg-color;
-}
 
-.tui-page-btn.dark-theme * {
-  // color: ;
-}
 .toolbar {
   display: flex;
   position: absolute;
@@ -143,4 +136,8 @@ body.dark-theme {
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
   box-shadow: 0 0 0 3px $title-text-color;
+}
+
+.tui-pagination .tui-page-btn .light-theme {
+  color: red;
 }
