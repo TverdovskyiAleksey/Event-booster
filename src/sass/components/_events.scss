@@ -110,6 +110,19 @@
   margin-top: 5px;
   margin-bottom: 0px;
 
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+
   font-weight: $font-weight-bold;
   color: $title-text-color;
 }
@@ -124,6 +137,19 @@
 .place {
   margin-top: 5px;
   margin-bottom: 0px;
+
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 1;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
 
   font-weight: $font-weight-semi-bold;
   font-size: $font-size-12;

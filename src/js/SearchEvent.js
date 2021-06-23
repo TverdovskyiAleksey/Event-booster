@@ -23,7 +23,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1280) {
 
 if (!newsApiService.query & !newsApiService.countryCode) {
   randomList();
-  // startPaginationRandom();
+  startPaginationRandom();
 }
 
 function onInput(e) {
@@ -33,7 +33,7 @@ function onInput(e) {
   clearContainer();
 
   fetchHits();
-  // startPagination();
+  startPagination();
 }
 
 function randomList() {
@@ -41,7 +41,7 @@ function randomList() {
     .fetchRandom()
     .then(events => {
       appendMarkup(events);
-      startPaginationRandom();
+      // startPaginationRandom();
     })
     .catch(error => console.log(error));
 }
@@ -53,7 +53,7 @@ function fetchHits() {
       clearContainer();
 
       appendMarkup(events);
-      startPagination();
+      // startPagination();
     })
     .catch(error => console.log(error));
 }

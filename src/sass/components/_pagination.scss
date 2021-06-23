@@ -14,7 +14,7 @@
 }
 .tui-pagination {
   height: 28px;
-  margin: 60px 0;
+  // margin: 60px 0;
   line-height: normal;
   text-align: center;
   font-size: 0;
@@ -118,7 +118,7 @@
 }
 .tui-pagination .tui-next-is-ellip {
   margin-left: 10px;
-  fill: white;
+  fill: $primary-text-color;
 }
 .tui-pagination .tui-ico-first {
   width: 11px;

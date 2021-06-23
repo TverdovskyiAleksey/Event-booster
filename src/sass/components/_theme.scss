@@ -60,6 +60,10 @@ body.dark-theme {
 .tui-pagination.light-theme * {
   color: $svg-color;
 }
+
+.tui-page-btn.dark-theme * {
+  // color: ;
+}
 .toolbar {
   display: flex;
   position: absolute;
@@ -108,7 +112,7 @@ body.dark-theme {
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: $modal-text-color;
+  background-color: $color-switcher-grey;
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -129,7 +133,7 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: $primary-text-color;
+  background-color: $color-switcher-white;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
