@@ -14,7 +14,7 @@ export const eventSettings = event => ({
   time: event.dates.start.localTime,
   timezone: event._embedded.venues[0].timezone,
   place: event._embedded.venues[0].name,
-  // place2: event._embedded.venues[0].address.line1,
+  place2: event._embedded.venues[0].address.line1,
   // place2: event._embedded.venues[0].location,
   city: event._embedded.venues[0].city.name,
   country: event._embedded.venues[0].country.name,
