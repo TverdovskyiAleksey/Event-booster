@@ -33,6 +33,7 @@ function onBtnMore(e) {
     onCloseModal();
     clearContainer();
     fetchHits();
+    newsApiService.query = "";
   }
 }
 

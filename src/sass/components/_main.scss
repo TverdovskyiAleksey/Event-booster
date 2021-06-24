@@ -172,6 +172,7 @@ img {
 .card-svg::before {
   position: absolute;
   display: block;
+  z-index: 2;
   content: '';
   border-radius: 50px 0;
   border: 1px solid rgba(220, 86, 198, 0.3);
