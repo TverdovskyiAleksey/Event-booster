@@ -1,7 +1,7 @@
 import cardTmpl from '../tamplates/cardTpl';
 import { eventSettings } from './eventSettings';
 import getRefs from './getRefs';
-import { clearContainer, fetchHits, newsApiService, randomList } from './searchEvent';
+import { clearContainer, fetchHits, newsApiService, randomList } from './SearchEvent';
 
 const refs = getRefs();
 refs.openModalBtn.addEventListener('click', onOpenModal);
