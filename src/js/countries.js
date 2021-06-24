@@ -1,4 +1,5 @@
 export default {
+  '': 'Choose country',
   US: 'USA',
   AD: 'Andorra',
   AI: 'Anguilla',
@@ -82,4 +83,4 @@ export default {
   AE: 'United Arab Emirates',
   UY: 'Uruguay',
   VE: 'Venezuela',
-}
+};

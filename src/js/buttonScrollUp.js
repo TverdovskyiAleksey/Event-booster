@@ -1,4 +1,4 @@
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 const refs = getRefs();
 
 refs.buttonScrollUp.addEventListener('click', onButtonScrollUpClick);
@@ -8,6 +8,7 @@ function onButtonScrollUpClick() {
     behavior: 'smooth',
   });
 }
+
 window.onscroll = function () {
   const scrolled = window.pageYOffset || refs.searchingBlock.scrollTop;
   if (scrolled > 400) {

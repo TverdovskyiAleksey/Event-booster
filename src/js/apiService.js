@@ -1,66 +1,47 @@
 import { BASE_URL } from './baseData';
 import { KEY } from './baseData';
+import onFetchError from './errorFetch';
 
 export default class NewApiService {
   constructor() {
     this.searchQuery = '';
-    this.page = 1;
+    this.page = 0;
     this.totalElements = 980;
     this.eventPageQuantity = 20;
+
+    this.countryCode = '';
   }
 
-
-  fetchArticles() {
-    return fetch(
-      `${BASE_URL}events.json?keyword=${this.searchQuery}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-    )
-      .then(r => r.json())
-      .then(data => {
-        this.totalElements = data.page.totalElements;
-        return data._embedded.events;
-      });
-    // .catch(error => console.log(error))
-  }
-
-  fetchRandom() {
-    return fetch(
-      `${BASE_URL}events.json?classificationName=music&sort=random&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-
-    )
-      .then(r => r.json())
-      .then(data => {
-        this.totalElements = data.page.totalElements;
-        return data._embedded.events;
-      })
-            .catch(error => console.log(error));
-  }
-
-
-    fetchByCountries() {
-    return fetch(`${BASE_URL}events.json?countryCode=${this.searchQuery}&apikey=${KEY}`)
+   fetchEl(url) {
+        return fetch(url)
             .then(r => r.json())
-            .then(({ _embedded }) => {
-                return  _embedded.events;
-            })
-            .catch(error => error);
-    }
-    
-    resetPage() {
-        this.page = 1;
-    }           
-    
-    get  query() {
-    return this.searchQuery;    
-    }
+      .then(data => {
+        this.totalElements = data.page.totalElements;
+        if (!data._embedded) {
+          onFetchError();
+          return;
+        }
+        return data._embedded.events;
+      }).catch(error => console.log(error));
+  }
 
-    set  query(newQwery) {
-     this.searchQuery=newQwery;    
-    }
-    
-    setPage(page) {
+  fetchEventsById() {
+    return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`).then(r => r.json());
+  }
+
+  resetPage() {
+    this.page = 0;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQwery) {
+    this.searchQuery = newQwery;
+  }
+
+  setPage(page) {
     this.page = page;
   }
-
 }
-
- 

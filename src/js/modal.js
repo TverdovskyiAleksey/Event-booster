@@ -1,78 +1,70 @@
-import debounce from 'lodash.debounce';
 import cardTmpl from '../tamplates/cardTpl';
-import NewsApiService from './apiService';
+import { eventSettings } from './eventSettings';
+import getRefs from './getRefs';
+import { clearContainer, fetchHits, newsApiService, randomList } from './searchEvent';
 
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const KEY = 'w2rp7JjXdCoAjtGRKPPDY9cIXNULMVug';
-
-const refs = {
-    openModalBtn: document.querySelector('.list'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-    lightBoxOverlay: document.querySelector('.backdrop'),
-    bodyEl: document.querySelector('body'),
-
-    cardMurkup: document.querySelector('.modal-form')
-};
-
+const refs = getRefs();
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModalBtmClick);
 refs.lightBoxOverlay.addEventListener('click', onBackdropClick);
-const newsApiService = new NewsApiService();
+refs.moreBtn.addEventListener('click', onShowTheRestOfTheArtistEvents);
 
 function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
+  refs.modal.classList.toggle('is-hidden');
 }
 
-function onOpenModal() {
-    refs.bodyEl.classList.add('modal-is-open');
-    window.addEventListener('keydown', onEsckeyPress);
-    toggleModal();
+function onOpenModal(e) {
+  const li = e.target.closest('li');
+  if (!li) return;
+  newsApiService.query = li.dataset.eventid;
+  refs.bodyTheme.classList.add('modal-is-open');
+  window.addEventListener('keydown', onEsckeyPress);
+  toggleModal();
 
-    fetchEventsById()
-        .then(renderMurkupCard)
-        .catch(error => {
-            console.log(error)
-        })
+  newsApiService.fetchEventsById().then(e => renderMurkupCard(e));
+}
 
+window.addEventListener('click', onBtnMore);
+function onBtnMore(e) {
+  const clickBtnMore = e.target;
+
+  if (clickBtnMore.classList.contains('btn-more')) {
+    newsApiService.query = e.target.dataset.name;
+    onCloseModal();
+    clearContainer();
+    fetchHits();
+    newsApiService.query = "";
+  }
 }
 
 function onCloseModalBtmClick() {
-    onCloseModal();
-};
+  onCloseModal();
+}
 
 function onCloseModal() {
-    refs.bodyEl.classList.remove('modal-is-open');
-    window.removeEventListener('keydown', onEsckeyPress);
-    toggleModal();
-    refs.cardMurkup.innerHTML = '';
+  refs.bodyTheme.classList.remove('modal-is-open');
+  window.removeEventListener('keydown', onEsckeyPress);
+  toggleModal();
+  refs.cardMurkup.innerHTML = '';
 }
 
-function onBackdropClick(evt) {
-    if (evt.currentTarget === evt.target) {
-        onCloseModal();
-    };
-};
-
-function onEsckeyPress(evt) {
-    if (evt.code === 'Escape') {
-        onCloseModal();
-    };
-};
-
-
-
-function fetchEventsById() {
-    return fetch(`${BASE_URL}events.json?id=&apikey=${KEY}`)
-        .then(response => {
-            return response.json();
-        })
-
+function onBackdropClick(e) {
+  if (e.currentTarget === e.target) {
+    onCloseModal();
+  }
 }
 
-function renderMurkupCard(ent) {
-    const markup = cardTmpl(ent);
-    console.log(markup);
-    refs.cardMurkup.innerHTML = markup;
+function onEsckeyPress(e) {
+  if (e.code === 'Escape') {
+    onCloseModal();
+  }
 }
 
+function renderMurkupCard(e) {
+  const markup = cardTmpl(eventSettings(e));
+  refs.cardMurkup.innerHTML = markup;
+}
+
+function onShowTheRestOfTheArtistEvents() {
+  onCloseModal();
+}

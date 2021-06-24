@@ -56,9 +56,8 @@
   }
 }
 
-// country
 .choose-input {
-  z-index: 99;
+  z-index: 2;
   display: block;
   width: 100%;
   padding: 10px 30px;
@@ -109,7 +108,7 @@
     right: -5px;
     width: 225px;
     height: 1px;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid $country-text-color;
     transform: translateY(-50%) scalex(0);
     transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
   }
@@ -133,7 +132,7 @@
   margin-left: -30px;
   height: 210px;
   overflow-y: scroll;
-  color: #cccccc;
+  color: $country-text-color;
   transform: scaleY(1);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
 
@@ -171,8 +170,6 @@
 }
 
 .button-scroll-up {
-  // visibility: hidden;
-  // opacity: 0;
   display: none;
   position: fixed;
   z-index: 12;
@@ -184,18 +181,19 @@
   outline: transparent;
   border-radius: 50%;
   cursor: pointer;
-  color: $modal-bg-color;
-  background-color: $search-bg-color;
+  color: $title-text-color;
+  background: none;
   transition: color 250ms $timing-function, transform 250ms $timing-function;
   &:hover,
   &:focus {
-    color: $title-text-color;
+    color: $accent-modal-color;
     transform: scale(0.91);
     @media screen and (min-width: 1200px) {
       transform: scale(1.07);
     }
   }
 }
+
 .button-scroll-icon {
   display: inline-block;
   width: 40px;
@@ -203,12 +201,48 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+
   @media screen and (min-width: 768px) {
     width: 50px;
     height: 50px;
   }
+
   @media screen and (min-width: 1280px) {
     width: 60px;
     height: 60px;
   }
+}
+
+.error-fetch {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 350px;
+  height: 50px;
+  padding: 13px 0;
+
+  background: linear-gradient(
+    45deg,
+    $modal-text-color,
+    $title-text-color,
+    $modal-text-color,
+    $title-text-color
+  );
+
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 1px 1px $title-text-color;
+}
+
+.swal-text {
+  font-size: $font-size-20;
+  font-weight: $font-weight-bold;
+  color: $country-text-color;
+}
+
+.swal-text:last-child {
+  margin-bottom: 0;
+}
+
+.swal-text:first-child {
+  margin-top: 0;
 }

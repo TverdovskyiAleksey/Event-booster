@@ -1,49 +1,35 @@
-# parcel-project-template
+<h1 align="center">  EVENT BOOSTER PROJECT </h1>
 
-## Зависимости
+<h3 align="center"> 🛠 &nbsp;Tech Stack 🛠 </h3>
 
-На компьютере должена быть установлена LTS-версия [Node.js](https://nodejs.org/en/).
+<span align="center"> 
+  
+![HTML](https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5)&nbsp;
+![CSS](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=CSS3&logoColor=1572B6)&nbsp;
+![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)&nbsp;
+  
+![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)&nbsp;
+![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;
+![Figma](https://img.shields.io/badge/-Figma-05122A?style=flat&logo=figma)&nbsp;
 
-## Перед началом работы
+![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
 
-Один раз на проект установить все зависимости.
+![Google](https://img.shields.io/badge/-Google-05122A?style=flat&logo=google&logoColor=007ACC)&nbsp;
 
-```shell
-npm ci
-```
+</span>
 
-### Разработка
+<h3 align="center"> ℹ️ &nbsp; South Padawans Team <img src="https://emojis.slackmojis.com/emojis/images/1575297777/7233/baby-yoda.png?1575297777"> <h3>
+<span align="center"> 
+  
+<a align="center" href="https://github.com/TverdovskyiAleksey">![GitHub](https://img.shields.io/badge/-TverdovskyiAleksey-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Svetlana-Pishchulina">![GitHub](https://img.shields.io/badge/-SvetlanaPishchulina-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/RomanSokurenko">![GitHub](https://img.shields.io/badge/-RomanSokurenko-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Dovzhenko-olga">![GitHub](https://img.shields.io/badge/-Dovzhenkoolga-05122A?style=flat&logo=github)</a>
 
-Запустить режим разработки.
+<a align="center" href="https://github.com/yuriyprihodko158">![GitHub](https://img.shields.io/badge/-yuriyprihodko158-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/YuliiaU">![GitHub](https://img.shields.io/badge/-YuliiaU-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Artanyan">![GitHub](https://img.shields.io/badge/-Artanyan-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Vipa4ka">![GitHub](https://img.shields.io/badge/-Vipa4ka-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/SergeyBojchenko">![GitHub](https://img.shields.io/badge/-SergeyBojchenko-05122A?style=flat&logo=github)</a>
 
-```shell
-npm run dev
-```
-
-Во вкладке браузера перейти по адресу [http://localhost:1234](http://localhost:1234).
-
-### Деплой
-
-Сборка будет автоматически собирать и деплоить продакшен версию проекта на GitHub Pages, в ветку
-`gh-pages`, каждый раз когда обновляется ветка `main`. Например, после прямого пуша или принятого
-пул-реквеста. Для этого необходимо в файле `package.json` отредактировать поле `homepage` и скрипт
-`build`, заменив `имя_пользователя` и `имя_репозитория` на свои.
-
-```json
-"homepage": "https://имя_пользователя.github.io/имя_репозитория",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /имя_репозитория/"
-},
-```
-
-Через какое-то время живую страницу можно будет посмотреть по адресу указанному в отредактированном
-свойстве `homepage`, например
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-## Файлы и папки
-
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  `src/sass/main.scss`
-- Изображения добавляйте в папку `src/images`, заранее оптимизировав их. Сборщик просто копирует
-  используемые изображения чтобы не нагружать систему оптимизацией картинок, так как на слабых
-  компьютерах это может занять прилично времени.
+</span>

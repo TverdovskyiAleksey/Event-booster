@@ -1,19 +1,73 @@
 body.light-theme {
-  background-color: #fff;
-  color: #0e0e0e;
+  height: 100%;
+  color: $modal-text-color;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $modal-bg-color;
+  background-image: url(../images/background-body/mobile/light-bg-body-mobile.svg);
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/background-body/tablet/light-bg-body-tablet.svg);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/background-body/desktop/light-bg-body-desktop.svg);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1500px) {
+    background-size: contain;
+  }
 }
 body.dark-theme {
-  background-color: #0e0e0e;
-  color: #fff;
+  height: 100%;
+  color: $primary-text-color;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $modal-text-color;
+  background-image: url(../images/background-body/noise-body.svg),
+    url(../images/background-body/mobile/bg-body-mobile.svg);
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/background-body/noise-body.svg),
+      url(../images/background-body/tablet/bg-body-tablet.svg);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/background-body/noise-body.svg),
+      url(../images/background-body/desktop/bg-body-desktop.svg);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1500px) {
+    background-size: contain;
+  }
+  background-color: $primary-text-color;
+  color: $modal-text-color;
 }
+
+body.dark-theme {
+  background-color: $modal-text-color;
+  color: $primary-text-color;
+}
+
+.tui-pagination.dark-theme * {
+  color: $primary-text-color;
+}
+
+.tui-pagination.light-theme * {
+  color: $svg-color;
+}
+
 .toolbar {
   display: flex;
   justify-content: flex-end;
   padding: 16px 24px;
-}
-.theme-switch {
-  display: flex;
-  align-items: center;
 }
 
 .theme-switch__icon {
@@ -55,7 +109,7 @@ body.dark-theme {
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #333;
+  background-color: $modal-text-color;
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -63,7 +117,7 @@ body.dark-theme {
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
+  background-color: $title-text-color;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -75,7 +129,7 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
+  background-color: $primary-text-color;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -84,5 +138,5 @@ body.dark-theme {
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #dc56c5;
+  box-shadow: 0 0 0 3px $title-text-color;
 }

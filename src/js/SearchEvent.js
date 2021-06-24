@@ -1,15 +1,22 @@
 import debounce from 'lodash.debounce';
-import getRefs from './get-Refs';
+import getRefs from './getRefs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
-import selectCountry from '/js/selectCountry';
+// import selectCountry from '/js/selectCountry';
 import countries from '/js/countries';
-import { startPaginationRandom, startPagination, option } from './pagination';
+import { startPaginationRandom, startPagination, option, onScroll } from './pagination';
 import onSwitchChange from './switchTogle';
+import { eventSettings } from './eventSettings';
+import onFetchError from './errorFetch';
+
+
+import { BASE_URL } from './baseData';
+import { KEY } from './baseData';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
+
 refs.switchTogle.addEventListener('change', onSwitchChange);
 refs.inputSearchForm.addEventListener('input', debounce(onInput, 500));
 refs.dropList.addEventListener('click', e => selectCountry(e));
@@ -19,7 +26,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1280) {
   option.itemsPerPage += 1;
 }
 
-if (newsApiService.query == 0) {
+if (!newsApiService.query & !newsApiService.countryCode) {
   randomList();
   startPaginationRandom();
 }
@@ -34,28 +41,24 @@ function onInput(e) {
   startPagination();
 }
 
-function randomList() {
+function apiServiceFetch(url) {
   newsApiService
-    .fetchRandom()
+    .fetchEl(url)
     .then(events => {
-      appendMarkup(events);
-      //   startPaginationRandom();
+      appendMarkup(events);      
     })
     .catch(error => console.log(error));
 }
 
+function randomList() {
+  apiServiceFetch(`${BASE_URL}events.json?classificationName=music&sort=random&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);
+}
 function fetchHits() {
-  newsApiService
-    .fetchArticles()
-    .then(events => {
-      appendMarkup(events);
-      //   startPagination();
-    })
-    .catch(error => console.log(error));
+  apiServiceFetch(`${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);   
 }
 
 function appendMarkup(events) {
-  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events));
+  refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events.map(eventSettings)));
 }
 
 function clearContainer() {
@@ -63,7 +66,6 @@ function clearContainer() {
 }
 
 export { clearContainer, fetchHits, newsApiService, randomList };
-
 
 dropdown(refs.selectCountryBtn);
 
@@ -94,5 +96,14 @@ function closeTargetElm(target, element) {
       .forEach(el => el.classList.remove('current'));
     target.classList.add('current');
     element.innerText = target.innerText;
+  }
+}
+
+function selectCountry(e) {
+  if (e.target.nodeName === 'LI') {
+    newsApiService.countryCode = e.target.dataset.countryCode;
+    clearContainer();   
+    fetchHits();
+     
   }
 }
