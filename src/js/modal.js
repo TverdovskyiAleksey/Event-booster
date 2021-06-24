@@ -1,16 +1,13 @@
 import cardTmpl from '../tamplates/cardTpl';
-import NewsApiService from './apiService';
 import { eventSettings } from './eventSettings';
 import getRefs from './getRefs';
+import { clearContainer, fetchHits, newsApiService, randomList } from './searchEvent';
 
 const refs = getRefs();
-
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModalBtmClick);
 refs.lightBoxOverlay.addEventListener('click', onBackdropClick);
 refs.moreBtn.addEventListener('click', onShowTheRestOfTheArtistEvents);
-
-const newsApiService = new NewsApiService();
 
 function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
@@ -24,9 +21,17 @@ function onOpenModal(e) {
   window.addEventListener('keydown', onEsckeyPress);
   toggleModal();
 
-   newsApiService
-    .fetchEventsById()
-    .then(e => renderMurkupCard(e));
+  newsApiService.fetchEventsById().then(e => renderMurkupCard(e));
+}
+window.addEventListener('click', onBtnMore);
+function onBtnMore(e) {
+  const clickBtnMore = e.target;
+
+  if (clickBtnMore.classList.contains('btn-more')) {
+    newsApiService.query = e.target.dataset.name;
+    onCloseModal();
+    fetchHits();
+  }
 }
 
 function onCloseModalBtmClick() {
@@ -57,6 +62,6 @@ function renderMurkupCard(e) {
   refs.cardMurkup.innerHTML = markup;
 }
 
-function onShowTheRestOfTheArtistEvents () {
-    onCloseModal();
-    };
+function onShowTheRestOfTheArtistEvents() {
+  onCloseModal();
+}

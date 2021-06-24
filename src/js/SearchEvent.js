@@ -8,6 +8,7 @@ import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
 import onSwitchChange from './switchTogle';
 import { eventSettings } from './eventSettings';
+import onFetchError from './errorFetch';
 
 
 import { BASE_URL } from './baseData';
@@ -34,7 +35,6 @@ function onInput(e) {
   e.preventDefault();
   newsApiService.query = e.target.value;
   newsApiService.resetPage();
-  clearContainer();
 
   fetchHits();
   startPagination();
@@ -48,7 +48,6 @@ function apiServiceFetch(url) {
     })
     .catch(error => console.log(error));
 }
-
 
 function randomList() {
   apiServiceFetch(`${BASE_URL}events.json?classificationName=music&sort=random&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);
