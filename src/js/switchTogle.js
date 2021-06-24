@@ -3,6 +3,7 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+
 const refs = getRefs();
 export default function onSwitchChange() {
   const a = Theme.LIGHT;
@@ -10,6 +11,7 @@ export default function onSwitchChange() {
   onDarkTheme(a, b);
   onLightTheme(a, b);
 }
+
 function onDarkTheme(a, b) {
   if (refs.switchTogle.checked) {
     refs.bodyTheme.classList.remove(a);
@@ -29,6 +31,7 @@ function onLightTheme(a, b) {
     localStorage.setItem('theme', a);
   }
 }
+
 const savedData = localStorage.getItem('theme') || Theme.DARK;
 refs.bodyTheme.classList.add(savedData);
 refs.pagination.classList.add(savedData);

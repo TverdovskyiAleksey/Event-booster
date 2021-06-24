@@ -12,11 +12,6 @@ export default class NewApiService {
     this.countryCode = '';
   }
 
-
-
-
-
-
    fetchEl(url) {
         return fetch(url)
             .then(r => r.json())
@@ -29,33 +24,6 @@ export default class NewApiService {
         return data._embedded.events;
       }).catch(error => console.log(error));
   }
-
-  // fetchArticles() {
-  //   return fetch(
-  //     `${BASE_URL}events.json?keyword=${this.searchQuery}&countryCode=${this.countryCode}&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-  //   )
-  //     .then(r => r.json())
-  //     .then(data => {
-  //       this.totalElements = data.page.totalElements;
-  //       if (!data._embedded) {
-  //         onFetchError();
-  //         return;
-  //       }
-  //       return data._embedded.events;
-  //     });
-  // }
-
-  // fetchRandom() {
-  //   return fetch(
-  //     `${BASE_URL}events.json?classificationName=music&sort=random&size=${this.eventPageQuantity}&page=${this.page}&apikey=${KEY}`,
-  //   )
-  //     .then(r => r.json())
-  //     .then(data => {
-  //       this.totalElements = data.page.totalElements;
-  //       return data._embedded.events;
-  //     })
-  //     .catch(error => console.log(error));
-  // }
 
   fetchEventsById() {
     return fetch(`${BASE_URL}events/${this.searchQuery}.json?&apikey=${KEY}`).then(r => r.json());

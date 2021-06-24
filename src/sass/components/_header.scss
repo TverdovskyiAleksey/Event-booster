@@ -56,7 +56,6 @@
   }
 }
 
-// country
 .choose-input {
   z-index: 2;
   display: block;
@@ -171,8 +170,6 @@
 }
 
 .button-scroll-up {
-  // visibility: hidden;
-  // opacity: 0;
   display: none;
   position: fixed;
   z-index: 12;
@@ -185,7 +182,6 @@
   border-radius: 50%;
   cursor: pointer;
   color: $title-text-color;
-  // background-color: $search-bg-color;
   background: none;
   transition: color 250ms $timing-function, transform 250ms $timing-function;
   &:hover,
@@ -197,6 +193,7 @@
     }
   }
 }
+
 .button-scroll-icon {
   display: inline-block;
   width: 40px;
@@ -209,11 +206,13 @@
     width: 50px;
     height: 50px;
   }
+
   @media screen and (min-width: 1280px) {
     width: 60px;
     height: 60px;
   }
 }
+
 .error-fetch {
   position: absolute;
   top: 50px;
@@ -221,6 +220,7 @@
   width: 350px;
   height: 50px;
   padding: 13px 0;
+
   background: linear-gradient(
     45deg,
     $modal-text-color,
@@ -228,17 +228,21 @@
     $modal-text-color,
     $title-text-color
   );
+
   backdrop-filter: blur(20px);
   box-shadow: 0 0 1px 1px $title-text-color;
 }
+
 .swal-text {
   font-size: $font-size-20;
   font-weight: $font-weight-bold;
   color: $country-text-color;
 }
+
 .swal-text:last-child {
   margin-bottom: 0;
 }
+
 .swal-text:first-child {
   margin-top: 0;
 }

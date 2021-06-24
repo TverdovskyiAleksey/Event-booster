@@ -1,11 +1,11 @@
 body.light-theme {
   height: 100%;
-  color: #0e0e0e;
+  color: $modal-text-color;
 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #fff2fd;
+  background-color: $modal-bg-color;
   background-image: url(../images/background-body/mobile/light-bg-body-mobile.svg);
 
   @media screen and (min-width: 768px) {
@@ -24,11 +24,11 @@ body.light-theme {
 }
 body.dark-theme {
   height: 100%;
-  color: #fff;
+  color: $primary-text-color;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #0e0e0e;
+  background-color: $modal-text-color;
   background-image: url(../images/background-body/noise-body.svg),
     url(../images/background-body/mobile/bg-body-mobile.svg);
 
@@ -50,16 +50,20 @@ body.dark-theme {
   background-color: $primary-text-color;
   color: $modal-text-color;
 }
+
 body.dark-theme {
   background-color: $modal-text-color;
   color: $primary-text-color;
 }
+
 .tui-pagination.dark-theme * {
   color: $primary-text-color;
 }
+
 .tui-pagination.light-theme * {
   color: $svg-color;
 }
+
 .toolbar {
   display: flex;
   justify-content: flex-end;

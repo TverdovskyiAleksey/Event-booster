@@ -23,6 +23,7 @@ function onOpenModal(e) {
 
   newsApiService.fetchEventsById().then(e => renderMurkupCard(e));
 }
+
 window.addEventListener('click', onBtnMore);
 function onBtnMore(e) {
   const clickBtnMore = e.target;

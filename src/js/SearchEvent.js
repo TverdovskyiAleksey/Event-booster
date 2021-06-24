@@ -57,28 +57,6 @@ function fetchHits() {
   apiServiceFetch(`${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);   
 }
 
-// function randomList() {
-//   newsApiService
-//     .fetchRandom()
-//     .then(events => {
-//       appendMarkup(events);
-//       // startPaginationRandom();
-//     })
-//     .catch(error => console.log(error));
-// }
-
-// function fetchHits() {
-//   newsApiService
-//     .fetchArticles()
-//     .then(events => {
-//       clearContainer();
-
-//       appendMarkup(events);
-//       // startPagination();
-//     })
-//     .catch(error => console.log(error));
-// }
-
 function appendMarkup(events) {
   refs.eventList.insertAdjacentHTML('beforeend', eventTLP(events.map(eventSettings)));
 }

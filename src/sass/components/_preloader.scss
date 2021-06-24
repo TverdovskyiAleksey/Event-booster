@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
-  background: black;
+  background: $modal-text-color;
   z-index: 1001;
   color: $title-text-color;
   fill: $title-text-color;
@@ -24,14 +24,16 @@
   color: $title-text-color;
   fill: currentColor;
   fill: $title-text-color;
-  stroke: $title-text-color; /* цвет обводки */
+  stroke: $title-text-color;
   stroke-width: 1px;
+
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 400px;
     margin-top: -200px;
     margin-left: -200px;
   }
+
   @media screen and (min-width: 1280px) {
     width: 500px;
     height: 500px;

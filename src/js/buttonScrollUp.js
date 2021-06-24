@@ -8,6 +8,7 @@ function onButtonScrollUpClick() {
     behavior: 'smooth',
   });
 }
+
 window.onscroll = function () {
   const scrolled = window.pageYOffset || refs.searchingBlock.scrollTop;
   if (scrolled > 400) {
