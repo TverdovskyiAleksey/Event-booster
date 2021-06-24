@@ -5,7 +5,7 @@ import onFetchError from './errorFetch';
 export default class NewApiService {
   constructor() {
     this.searchQuery = '';
-    this.page = 1;
+    this.page = 0;
     this.totalElements = 980;
     this.eventPageQuantity = 20;
 
@@ -62,7 +62,7 @@ export default class NewApiService {
   }
 
   resetPage() {
-    this.page = 1;
+    this.page = 0;
   }
 
   get query() {

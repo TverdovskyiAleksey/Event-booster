@@ -15,10 +15,10 @@ function startPagination() {
   option.totalItems = totalEl;
   const pagination = new tui.Pagination(refs.pagination, option);
   pagination.on('beforeMove', function (e) {
+    onScroll();
     newsApiService.setPage(e.page);
     clearContainer();
     fetchHits();
-    //     функция скролла;
   });
 }
 
@@ -27,17 +27,17 @@ function startPaginationRandom() {
   option.totalItems = totalEl;
   const pagination = new tui.Pagination(refs.pagination, option);
   pagination.on('beforeMove', function (e) {
-    // onScroll();
+    onScroll();
     newsApiService.setPage(e.page);
     clearContainer();
     randomList();
-    //      функция скролла;
   });
 }
-// function onScroll() {
-//   refs.eventList.scrollIntoView({
-//     behavior: 'smooth',
-//     block: 'start',
-//   });
-// }
-export { startPaginationRandom, startPagination, option };
+function onScroll() {
+  window.scrollTo({
+    top: 1,
+    behavior: 'smooth',
+  });
+}
+
+export { startPaginationRandom, startPagination, option, onScroll };
