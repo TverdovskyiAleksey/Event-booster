@@ -5,17 +5,16 @@ import { clearContainer, fetchHits, newsApiService, randomList } from './searchE
 const refs = getRefs();
 
 const option = {
-  totalItems: 980,
+  totalItems: 580,
   visiblePages: 3,
   itemsPerPage: 20,
 };
 
 function startPagination() {
-  const totalEl = newsApiService.totalElements < 980 ? newsApiService.totalElements : 980;
+  const totalEl = newsApiService.totalElements < 580 ? newsApiService.totalElements : 580;
   option.totalItems = totalEl;
   const pagination = new tui.Pagination(refs.pagination, option);
   pagination.on('beforeMove', function (e) {
-    onScroll();
     newsApiService.setPage(e.page);
     clearContainer();
     fetchHits();
@@ -23,21 +22,14 @@ function startPagination() {
 }
 
 function startPaginationRandom() {
-  const totalEl = newsApiService.totalElements < 980 ? newsApiService.totalElements : 980;
+  const totalEl = newsApiService.totalElements < 580 ? newsApiService.totalElements : 580;
   option.totalItems = totalEl;
   const pagination = new tui.Pagination(refs.pagination, option);
   pagination.on('beforeMove', function (e) {
-    onScroll();
     newsApiService.setPage(e.page);
     clearContainer();
     randomList();
   });
 }
-function onScroll() {
-  window.scrollTo({
-    top: 1,
-    behavior: 'smooth',
-  });
-}
 
-export { startPaginationRandom, startPagination, option, onScroll };
+export { startPaginationRandom, startPagination, option };

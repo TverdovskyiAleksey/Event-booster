@@ -6,15 +6,15 @@ export default class NewApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 0;
-    this.totalElements = 980;
+    this.totalElements = 580;
     this.eventPageQuantity = 20;
 
     this.countryCode = '';
   }
 
-   fetchEl(url) {
-        return fetch(url)
-            .then(r => r.json())
+  fetchEl(url) {
+    return fetch(url)
+      .then(r => r.json())
       .then(data => {
         this.totalElements = data.page.totalElements;
         if (!data._embedded) {
@@ -22,7 +22,8 @@ export default class NewApiService {
           return;
         }
         return data._embedded.events;
-      }).catch(error => console.log(error));
+      })
+      .catch(error => console.log(error));
   }
 
   fetchEventsById() {
