@@ -25,7 +25,13 @@
     {{#if prices}}
     <span class='title-card'>PRICES</span>
     {{#each prices}}
-    <p class='info-text'>{{type}} {{min}} - {{max}} {{currency}}</p>
+    <div class="modal-price">
+      <svg class="modal__icon-barcode">
+        <use href="./images/sprite.svg#icon-barcode"></use>
+      </svg>
+      <p class='info-text'>{{type}} {{min}} - {{max}} {{currency}}</p>
+    </div>
+    <button class='modal-button'>BUY TICKETS</button>
     <a class="modal-button" href={{../url}}>BUY TICKETS</a>
     {{/each}}
     {{/if}}

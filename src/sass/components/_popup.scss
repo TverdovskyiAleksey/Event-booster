@@ -41,13 +41,13 @@
   @media screen and(min-width: 768px) and (max-width: 1279px) {
     display: block;
 
-    width: 233px;
+    max-width: 233px;
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
     display: block;
 
-    width: 360px;
+    max-width: 360px;
     height: 641px;
   }
 }
@@ -82,7 +82,7 @@
 }
 .info-text {
   display: block;
-  width: 243px;
+  
   margin: 0px 0px 10px;
   text-align: center;
 
@@ -105,7 +105,7 @@
   color: $modal-text-color;
 
   @media screen and (min-width: 768px) {
-    width: 265px;
+    
     margin: 0px 0px 10px;
     text-align: left;
 
@@ -114,7 +114,7 @@
   }
 
   @media screen and (min-width: 1280px) {
-    width: 450px;
+    
     margin: 0px 0px 20px;
     text-align: left;
 
@@ -178,7 +178,7 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 20px;
+  
 
   width: 145px;
   height: 40px;
@@ -200,11 +200,20 @@
   }
 
   @media screen and (min-width: 1280px) {
-    margin-bottom: 30px;
+    
     width: 200px;
     height: 50px;
   }
 }
+
+.modal-button:not(:last-child) {
+margin-bottom: 20px;
+
+ @media screen and (min-width: 1280px) {
+    margin-bottom: 30px;
+  }
+}
+
 .modal-button:hover,
 .modal-button:focus {
   background-color: $title-text-color;
@@ -256,6 +265,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
+  margin-top: 25px;
   padding: 0px;
 
   width: 230px;
@@ -275,11 +285,13 @@
   @media screen and(min-width: 768px) and (max-width: 1279px) {
     width: 255px;
     height: 40px;
+    margin-top: 43px;
   }
 
   @media screen and(min-width: 1280px) {
     width: 255px;
     height: 50px;
+    margin-top: 45px;
   }
   &:hover,
   &:focus {
@@ -333,7 +345,7 @@
 
 .modals {
   position: fixed;
-  top: 50%;
+  top: 80%;
   left: 50%;
 
   width: 272px;
@@ -351,7 +363,7 @@
   @media screen and (min-width: 768px) {
     padding: 0px 30px;
 
-    top: 50%;
+    // top: 50%;
     left: 50%;
     width: 595px;
     height: 831px;
@@ -422,3 +434,29 @@
     height: 25px;
   }
 }
+
+.modal__icon-barcode {
+  background-image: url('../images/ticket2.png');
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+
+  @media screen and (min-width: 1280px) {
+    width: 29px;
+    height: 19px;
+  }
+}
+
+.modal-price {
+   display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.modal-price > .info-text {
+  margin-left: 13px;
+}
+
