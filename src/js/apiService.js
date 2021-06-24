@@ -27,7 +27,7 @@ export default class NewApiService {
           return;
         }
         return data._embedded.events;
-      });
+      }).catch(error => console.log(error));
   }
 
   // fetchArticles() {

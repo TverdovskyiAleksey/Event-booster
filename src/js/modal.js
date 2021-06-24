@@ -30,6 +30,7 @@ function onBtnMore(e) {
   if (clickBtnMore.classList.contains('btn-more')) {
     newsApiService.query = e.target.dataset.name;
     onCloseModal();
+    clearContainer();
     fetchHits();
   }
 }

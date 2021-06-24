@@ -35,6 +35,7 @@ function onInput(e) {
   e.preventDefault();
   newsApiService.query = e.target.value;
   newsApiService.resetPage();
+  clearContainer();
 
   fetchHits();
   startPagination();
@@ -53,7 +54,7 @@ function randomList() {
   apiServiceFetch(`${BASE_URL}events.json?classificationName=music&sort=random&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);
 }
 function fetchHits() {
-  apiServiceFetch(`${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);
+  apiServiceFetch(`${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);   
 }
 
 // function randomList() {
