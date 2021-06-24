@@ -26,8 +26,9 @@
     <span class='title-card'>PRICES</span>
     {{#each prices}}
     <p class='info-text'>{{type}} {{min}} - {{max}} {{currency}}</p>
-    <button class='modal-button'>BUY TICKETS</button>
+    <a class="modal-button" href={{../url}}>BUY TICKETS</a>
     {{/each}}
     {{/if}}
   </div>
 </div>
+<button class='btn-more' data-name='{{name}}'>MORE FROM THIS AUTHOR</button>

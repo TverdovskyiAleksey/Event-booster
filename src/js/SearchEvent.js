@@ -58,6 +58,9 @@ function fetchHits() {
       clearContainer();
       appendMarkup(events);
       // startPagination();
+      console.log(events);
+    })
+    .catch(error => console.log(error));
     });
 }
 
