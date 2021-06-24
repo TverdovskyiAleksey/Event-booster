@@ -1,6 +1,6 @@
 import getRefs from './getRefs';
 import NewsApiService from './apiService';
-import { clearContainer, fetchHits, newsApiService, randomList } from './searchEvent';
+import { clearContainer, fetchHits, newsApiService, randomList } from './SearchEvent';
 
 const refs = getRefs();
 

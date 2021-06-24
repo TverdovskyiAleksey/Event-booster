@@ -3,7 +3,6 @@ import getRefs from './getRefs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
-// import selectCountry from '/js/selectCountry';
 import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option, onScroll } from './pagination';
 import onSwitchChange from './switchTogle';
