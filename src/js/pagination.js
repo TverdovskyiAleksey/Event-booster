@@ -10,26 +10,14 @@ const option = {
   itemsPerPage: 20,
 };
 
-function startPagination() {
+function startPagination(func) {
   const totalEl = newsApiService.totalElements < 580 ? newsApiService.totalElements : 580;
   option.totalItems = totalEl;
   const pagination = new tui.Pagination(refs.pagination, option);
   pagination.on('beforeMove', function (e) {
     newsApiService.setPage(e.page);
     clearContainer();
-    fetchHits();
+    func();
   });
 }
-
-function startPaginationRandom() {
-  const totalEl = newsApiService.totalElements < 580 ? newsApiService.totalElements : 580;
-  option.totalItems = totalEl;
-  const pagination = new tui.Pagination(refs.pagination, option);
-  pagination.on('beforeMove', function (e) {
-    newsApiService.setPage(e.page);
-    clearContainer();
-    randomList();
-  });
-}
-
-export { startPaginationRandom, startPagination, option };
+export { startPagination, option };

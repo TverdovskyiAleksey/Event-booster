@@ -3,13 +3,10 @@ import getRefs from './getRefs';
 import eventTLP from '../tamplates/list.hbs';
 import countryList from '../tamplates/countryList.hbs';
 import NewsApiService from './apiService';
-// import selectCountry from '/js/selectCountry';
 import countries from '/js/countries';
-import { startPaginationRandom, startPagination, option, onScroll } from './pagination';
+import { startPaginationRandom, startPagination, option } from './pagination';
 import onSwitchChange from './switchTogle';
 import { eventSettings } from './eventSettings';
-import onFetchError from './errorFetch';
-
 
 import { BASE_URL } from './baseData';
 import { KEY } from './baseData';
@@ -28,7 +25,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1280) {
 
 if (!newsApiService.query & !newsApiService.countryCode) {
   randomList();
-  startPaginationRandom();
+  startPagination(randomList);
 }
 
 function onInput(e) {
@@ -38,23 +35,27 @@ function onInput(e) {
   clearContainer();
 
   fetchHits();
-  startPagination();
+  startPagination(fetchHits);
 }
 
 function apiServiceFetch(url) {
   newsApiService
     .fetchEl(url)
     .then(events => {
-      appendMarkup(events);      
+      appendMarkup(events);
     })
     .catch(error => console.log(error));
 }
 
 function randomList() {
-  apiServiceFetch(`${BASE_URL}events.json?classificationName=music&sort=random&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);
+  apiServiceFetch(
+    `${BASE_URL}events.json?classificationName=music&sort=random&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`,
+  );
 }
 function fetchHits() {
-  apiServiceFetch(`${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`);   
+  apiServiceFetch(
+    `${BASE_URL}events.json?keyword=${newsApiService.searchQuery}&countryCode=${newsApiService.countryCode}&size=${newsApiService.eventPageQuantity}&page=${newsApiService.page}&apikey=${KEY}`,
+  );
 }
 
 function appendMarkup(events) {
@@ -102,8 +103,7 @@ function closeTargetElm(target, element) {
 function selectCountry(e) {
   if (e.target.nodeName === 'LI') {
     newsApiService.countryCode = e.target.dataset.countryCode;
-    clearContainer();   
+    clearContainer();
     fetchHits();
-     
   }
 }
