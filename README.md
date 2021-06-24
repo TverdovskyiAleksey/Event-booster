@@ -1,6 +1,6 @@
-<h1 align="center"> 🐱‍👓 EVENT BOOSTER PROJECT 🐱‍💻</h1>
+<h1 align="center">  EVENT BOOSTER PROJECT </h1>
 
-<h3 align="center"> 🛠 &nbsp;Tech Stack 🐱‍💻 </h3>
+<h3 align="center"> 🛠 &nbsp;Tech Stack 🛠 </h3>
 
 <span align="center"> 
   
@@ -14,15 +14,18 @@
 
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
 
+![Google](https://img.shields.io/badge/-Google-05122A?style=flat&logo=google&logoColor=007ACC)&nbsp;
+
 </span>
 
-<h3 align="center"> ℹ️ &nbsp; Team Members 🐾 🐱‍🚀 <h3>
+<h3 align="center"> ℹ️ &nbsp; South Padawans team <img src="https://emojis.slackmojis.com/emojis/images/1575297777/7233/baby-yoda.png?1575297777"> <h3>
 <span align="center"> 
   
 <a align="center" href="https://github.com/TverdovskyiAleksey">![GitHub](https://img.shields.io/badge/-TverdovskyiAleksey-05122A?style=flat&logo=github)</a>
-<a align="center" href="https://github.com/Svetlana-Pishchulina">![GitHub](https://img.shields.io/badge/-Svetlana-Pishchulina-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Svetlana-Pishchulina">![GitHub](https://img.shields.io/badge/-SvetlanaPishchulina-05122A?style=flat&logo=github)</a>
 <a align="center" href="https://github.com/RomanSokurenko">![GitHub](https://img.shields.io/badge/-RomanSokurenko-05122A?style=flat&logo=github)</a>
-<a align="center" href="https://github.com/Dovzhenko-olga">![GitHub](https://img.shields.io/badge/-Dovzhenko-olga-05122A?style=flat&logo=github)</a>
+<a align="center" href="https://github.com/Dovzhenko-olga">![GitHub](https://img.shields.io/badge/-Dovzhenkoolga-05122A?style=flat&logo=github)</a>
+
 <a align="center" href="https://github.com/yuriyprihodko158">![GitHub](https://img.shields.io/badge/-yuriyprihodko158-05122A?style=flat&logo=github)</a>
 <a align="center" href="https://github.com/YuliiaU">![GitHub](https://img.shields.io/badge/-YuliiaU-05122A?style=flat&logo=github)</a>
 <a align="center" href="https://github.com/Artanyan">![GitHub](https://img.shields.io/badge/-Artanyan-05122A?style=flat&logo=github)</a>
