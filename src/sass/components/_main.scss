@@ -101,6 +101,8 @@ img {
 
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -137,6 +139,16 @@ img {
     margin: 35px;
     width: calc((100% - 8 * 35px) / 4);
   }
+
+  &:hover .card-foto {
+    box-shadow: 4px 0 10px 3px $title-text-color;
+    transform: translateY(-10%);
+  }
+
+  &:hover .card-svg::before {
+    box-shadow: 12px -8px 8px 0 rgba(220, 86, 198, 0.3);
+    transform: translateY(-10%);
+  }
 }
 
 .card {
@@ -145,5 +157,28 @@ img {
 
   @media screen and (min-width: 768px) {
     width: 180px;
+  }
+}
+
+.card-svg {
+  position: relative;
+}
+
+.card-svg::before {
+  position: absolute;
+  display: block;
+  content: '';
+  border-radius: 50px 0;
+  border: 1px solid rgba(220, 86, 198, 0.3);
+  width: 109px;
+  height: 101px;
+  right: -10px;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+
+  @media screen and (min-width: 768px) {
+    width: 153px;
+    height: 143px;
+    right: -14px;
   }
 }

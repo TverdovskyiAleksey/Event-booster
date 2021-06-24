@@ -1,8 +1,9 @@
 {{#each this}}
 <li class='events' data-eventid='{{id}}'>
   <div class='card'>
-    <svg class='card-svg' width='109' height='101'></svg>
-    <img class='card-foto' src='{{image.small}}' width='128' height='161' alt='' />
+    <div class='card-svg'>
+      <img class='card-foto' src='{{image.small}}' width='128' height='161' alt='{{name}}' />
+    </div>
     <div class='info'>
       <p class='team'>{{name}}</p>
       <p class='start-date'>{{date}}</p>

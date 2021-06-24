@@ -8,6 +8,7 @@ import countries from '/js/countries';
 import { startPaginationRandom, startPagination, option } from './pagination';
 import onSwitchChange from './switchTogle';
 import { eventSettings } from './eventSettings';
+import onFetchError from './errorFetch';
 
 const refs = getRefs();
 const newsApiService = new NewsApiService();
@@ -30,7 +31,6 @@ function onInput(e) {
   e.preventDefault();
   newsApiService.query = e.target.value;
   newsApiService.resetPage();
-  clearContainer();
 
   fetchHits();
   startPagination();
@@ -50,12 +50,15 @@ function fetchHits() {
   newsApiService
     .fetchArticles()
     .then(events => {
-      clearContainer();
 
+      if (!events) {
+        onFetchError();
+        return;
+      }
+      clearContainer();
       appendMarkup(events);
       // startPagination();
-    })
-    .catch(error => console.log(error));
+    });
 }
 
 function appendMarkup(events) {
