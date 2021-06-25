@@ -18,7 +18,7 @@
 
 </span>
 
-<h3 align="center"> ℹ️ &nbsp; South Padawans Team <img src="https://emojis.slackmojis.com/emojis/images/1575297777/7233/baby-yoda.png?1575297777"> <h3>
+<h3 align="center"> ℹ️ &nbsp; South Padawans Team  <img src="https://emojis.slackmojis.com/emojis/images/1575297777/7233/baby-yoda.png?1575297777"> <h3>
 <span align="center"> 
   
 <a align="center" href="https://github.com/TverdovskyiAleksey">![GitHub](https://img.shields.io/badge/-TverdovskyiAleksey-05122A?style=flat&logo=github)</a>
