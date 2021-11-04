@@ -150,6 +150,10 @@ img {
     transform: translateY(-10%);
   }
 
+  &:hover .place {
+    color: $title-text-color;
+  }
+
   &:hover .card-svg::before {
     box-shadow: 12px -8px 8px 0 rgba(220, 86, 198, 0.3);
     transform: translateY(-10%);
@@ -170,6 +174,7 @@ img {
 }
 
 .card-svg::before {
+  z-index: 2;
   position: absolute;
   display: block;
   content: '';

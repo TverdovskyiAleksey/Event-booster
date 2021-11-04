@@ -17,6 +17,7 @@ function onOpenModal(e) {
   const li = e.target.closest('li');
   if (!li) return;
   newsApiService.query = li.dataset.eventid;
+  if (e.target.classList.contains('icon-place') || e.target.classList.contains('place') || e.target.classList.contains('place-icon')) { return; };
   refs.bodyTheme.classList.add('modal-is-open');
   window.addEventListener('keydown', onEsckeyPress);
   toggleModal();
@@ -33,6 +34,7 @@ function onBtnMore(e) {
     onCloseModal();
     clearContainer();
     fetchHits();
+    newsApiService.query = '';
   }
 }
 

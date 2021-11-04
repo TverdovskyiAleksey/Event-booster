@@ -1,0 +1,271 @@
+.prefix-Dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  transition: opacity 400ms $timing-function;
+  display: none;
+  pointer-events: none;
+}
+.prefix-Dialog.active {
+  display: block;
+  pointer-events: auto;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+}
+.prefix-div {
+  padding: 20px;
+  background-color: rgba(32, 13, 29, 0.6);
+  width: 100%;
+  @media screen and (min-width: 320px) {
+    width: 320px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
+}
+.prefix-Dialog.active .prefix-tabs {
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+body .prefix-Dialog.active {
+  overflow: hidden;
+  width: 100vw;
+}
+.prefix-Dialog > div {
+  width: 100%;
+  max-height: 80hw;
+  position: relative;
+  margin: 16px auto;
+  padding: 16px 16px 13px 16px;
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.2) 0%, rgba(14, 14, 14, 0.8) 100%),
+    linear-gradient(to right, rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5));
+}
+
+.prefix-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: rgba(61, 61, 61, 0.8);
+  box-shadow: 0px 0px 10px #000;
+  text-align: center;
+  text-decoration: none;
+  line-height: 20px;
+  transition: all ease 0.8s;
+}
+
+.prefix-close:hover {
+  cursor: pointer;
+  animation: animate180 250ms $timing-function;
+}
+
+@keyframes animate180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+.team-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.team-card-item {
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 39px;
+  margin-bottom: 30px;
+  margin-right: 14px;
+}
+
+.card-team-item-box {
+  position: relative;
+  max-width: 150px;
+  margin: auto;
+  transition: all 250ms $timing-function;
+
+  &:hover {
+    transform: scale(1.05);
+    &::before {
+      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 15px #ff00de,
+        0 0 30px #ff00de, 0 0 20px #ff00de, 0 0 5px #ff00de;
+    }
+    & .team-card-name {
+      color: black;
+      text-shadow: 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 5px #ff00de;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .team-card-item {
+    width: calc((100% - 14px) / 2);
+    margin-right: 14px;
+    margin-bottom: 39px;
+  }
+  .team-card-item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .team-card-item:nth-child(5),
+  .team-card-item:nth-child(6) {
+    margin-bottom: 0;
+  }
+  .team-status {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-card-item {
+    width: calc((100% - 27px * 2) / 3);
+    margin-right: 27px;
+    margin-bottom: 58px;
+  }
+  .team-card-item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .team-card-item:nth-child(7),
+  .team-card-item:nth-child(8),
+  .team-card-item:nth-child(9) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .team-card-item {
+    width: calc((100% - 70px * 2) / 3);
+    margin-right: 70px;
+    margin-bottom: 63px;
+  }
+  .team-card-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.relative-div {
+  position: relative;
+  min-width: 100px;
+  max-height: auto;
+  margin: auto;
+  @media screen and (min-width: 768px) {
+    min-width: 150px;
+  }
+}
+.relative-div::before {
+  position: absolute;
+  display: block;
+  content: '';
+  border-radius: 50px 0;
+  border: 1px solid $title-text-color;
+  width: 109px;
+  z-index: -1;
+
+  width: 70px;
+  height: 70px;
+  top: -12px;
+  right: -12px;
+
+  transition: all 250ms $timing-function;
+
+  @media screen and (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+    top: -12px;
+    right: 12px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    right: -20px;
+  }
+}
+
+.card-team-img-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50px 0px;
+}
+.card-team-img {
+  cursor: pointer;
+  display: inline-block;
+  background-color: grey;
+
+  width: 150px;
+  height: 170px;
+  border-radius: 50px 0px;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    width: 100px;
+    height: 120px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 150px;
+    height: 170px;
+  }
+}
+.team-status {
+  margin-top: 8px;
+  color: $primary-text-color;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+  }
+}
+.team-close-popup-btn {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  fill: $title-text-color;
+}
+
+.team-card-name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.214;
+  padding: 0px 8px;
+  font-size: 13px;
+  color: $title-text-color;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+.team-modal:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

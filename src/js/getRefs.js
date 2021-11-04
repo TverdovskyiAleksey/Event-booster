@@ -16,5 +16,9 @@ export default function getRefs() {
     lightBoxOverlay: document.querySelector('.backdrop'),
     cardMurkup: document.querySelector('.modal-form'),
     moreBtn: document.querySelector('.btn-more'),
+    locateModalBackdrop: document.querySelector('.js-location-backdrop'),
+    openTeamModal: document.querySelector('.team-modal'),
+    closeTeamModal: document.querySelector('.prefix-close'),
+    elModal: document.querySelector('#Modal'),
   };
 }
