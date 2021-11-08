@@ -72,7 +72,7 @@ body .prefix-Dialog.active {
   text-align: center;
   text-decoration: none;
   line-height: 20px;
-  transition: all ease 0.8s;
+  transition: all 250ms $timing-function;
 }
 
 .prefix-close:hover {

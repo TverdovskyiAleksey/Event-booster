@@ -5,3 +5,5 @@ import './js/preloader';
 import './js/buttonScrollUp';
 import './js/locationModal';
 import './js/team';
+import './js/registerModal';
+import './js/auth';

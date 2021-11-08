@@ -20,5 +20,10 @@ export default function getRefs() {
     openTeamModal: document.querySelector('.team-modal'),
     closeTeamModal: document.querySelector('.prefix-close'),
     elModal: document.querySelector('#Modal'),
+    regBackdrop: document.querySelector('.js-reg-backdrop'),
+    openLogin: document.querySelector('.login-button'),
+    closeRegistration: document.querySelector('.js-close-reg'),
+    form: document.getElementById('form'),
+    button: document.getElementById('button-submit'),
   };
 }

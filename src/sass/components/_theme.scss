@@ -66,8 +66,38 @@ body.dark-theme {
 
 .toolbar {
   display: flex;
-  justify-content: flex-end;
-  padding: 16px 24px;
+  flex-direction: column;
+  padding: 10px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px 0 50px 0;
+  outline: transparent;
+  border: none;
+
+  background-color: #dc56c681;
+
+  transition: background-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(114, 88, 110, 0.6);
+  }
+
+  &:hover .login-icon,
+  &:focus .login-icon {
+    fill: $title-text-color;
+  }
+  &:hover .home-icon,
+  &:focus .home-icon {
+    fill: $title-text-color;
+  }
+}
+
+.theme-switch {
+  margin-left: 15px;
 }
 
 .theme-switch__icon {

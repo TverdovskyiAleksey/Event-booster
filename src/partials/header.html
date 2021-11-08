@@ -4,24 +4,51 @@
       <div class="toolbar">
         <div class="theme-switch">
           <div class="theme-switch__control">
-            <input
-              class="theme-switch__toggle"
-              type="checkbox"
-              name="theme"
-              id="theme-switch-toggle"
-              aria-label="Переключить между тёмной и светлой темой"
-            />
+            <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+              aria-label="Переключить между тёмной и светлой темой" />
             <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
             </label>
             <div aria-hidden="true" class="theme-switch__marker"></div>
           </div>
         </div>
+        <button type="button" class="login-button">
+          <svg class="login-icon" width=45 height=45>
+            <use href="./images/icons/sprite.svg#icon-userfollow"></use>
+          </svg>
+          <svg class="home-icon visually-hidden" width=45 height=45>
+            <use href="./images/icons/sprite.svg#icon-home"></use>
+          </svg>
+        </button>
+        <div class="reg-backdrop visually-hidden js-reg-backdrop">
+          <div class="reg-modal">
+            <button type="button" class="reg-close-btn js-close-reg" data-login-close>
+              <svg class="close-icon" width=17 height=17>
+                <use href="./images/icons/sprite.svg#icon-close-icon"></use>
+              </svg>
+            </button>
+            <form id="form" class="reg-form">
+              <b class="reg-title">register now</b>
+        
+              <label class="reg-label">Login
+                <input type="text" id="login" class="reg-input" />
+              </label>
+        
+              <label class="reg-label">Password
+                <input type="password" id="password" class="reg-input" />
+              </label>
+              <button type="submit" id="button-submit" class="send-button">Send</button>
+            </form>
+          </div>
+        </div>
       </div>
       <a href="index.html" class="logo-header">
         <picture>
-          <source srcset="./images/logo-desktop.png 1x" media="(min-width:1280px)" type="image/png" width="238px" height="201px"/>
-          <source srcset="./images/logo-tablet.png 1x" media="(min-width:768px)" type="image/png" width="180px" height="151px"/>
-          <source srcset="./images/logo-mobile.png 1x" media="(max-width:767px)" type="image/png" width="107px" height="90px"/>
+          <source srcset="./images/logo-desktop.png 1x" media="(min-width:1280px)" type="image/png" width="238px"
+            height="201px" />
+          <source srcset="./images/logo-tablet.png 1x" media="(min-width:768px)" type="image/png" width="180px"
+            height="151px" />
+          <source srcset="./images/logo-mobile.png 1x" media="(max-width:767px)" type="image/png" width="107px"
+            height="90px" />
           <img class="logo-img" src="./images/logo-mobile.png" alt="Event Booster" />
         </picture>
       </a>
@@ -29,12 +56,7 @@
       <div class="searching-block container">
         <form class="input-form search-form js-search-form">
           <div class="input-block">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Start searching"
-              autocomplete="off"
-            />
+            <input type="text" class="form-control" placeholder="Start searching" autocomplete="off" />
             <svg width="12" height="12">
               <use href="./images/icons/sprite.svg#icon-magnifier"></use>
             </svg>
