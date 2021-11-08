@@ -250,43 +250,16 @@
 }
 
 .login-button {
-  // position: absolute;
-  // top: 10px;
-  // right: 25px;
-  // width: 100px;
-  // height: 100px;
   margin-right: 30px;
-  // margin-left: auto;
-  // cursor: pointer;
-
   outline: transparent;
   border: none;
   background-color: transparent;
   cursor: pointer;
   padding: 0;
-
-  // transition: background-color 250ms $timing-function;
-
-  // &:hover,
-  // &:focus {
-  //   background-color: rgba(114, 88, 110, 0.6);
-  // }
-
-  // &:hover .login-icon,
-  // &:focus .login-icon {
-  //   fill: $title-text-color;
-  // }
-  // &:hover .home-icon,
-  // &:focus .home-icon {
-  //   fill: $title-text-color;
-  // }
 }
 
 .login-icon,
 .home-icon {
-  // margin-right: 30px;
-  // margin-top: 30px;
-
   fill: $primary-text-color;
 }
 
