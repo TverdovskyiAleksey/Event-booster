@@ -25,5 +25,9 @@ export default function getRefs() {
     closeRegistration: document.querySelector('.js-close-reg'),
     form: document.getElementById('form'),
     button: document.getElementById('button-submit'),
+    buttonAuth: document.querySelector('.login-icon'),
+    buttonOut: document.querySelector('.home-icon'),
+    inputLogin: document.getElementById('login'),
+    inputPassword: document.getElementById('password'),
   };
 }

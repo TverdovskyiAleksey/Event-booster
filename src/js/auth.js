@@ -1,8 +1,3 @@
-const buttonAuth = document.querySelector('.login-icon');
-const buttonOut = document.querySelector('.home-icon');
-const inputLogin = document.getElementById('login');
-const inputPassword = document.getElementById('password');
-
 import getRefs from './getRefs';
 import onCloseRegistration from './registerModal';
 
@@ -11,22 +6,22 @@ const refs = getRefs();
 refs.form.addEventListener('submit', onFormSubmit);
 
 const login = () => {
-  buttonAuth.classList.add('visually-hidden');
-  buttonOut.classList.remove('visually-hidden');
+  refs.buttonAuth.classList.add('visually-hidden');
+  refs.buttonOut.classList.remove('visually-hidden');
   onCloseRegistration();
 };
 
 const logout = () => {
-  buttonAuth.classList.remove('visually-hidden');
-  buttonOut.classList.add('visually-hidden');
-  inputLogin.value = '';
-  inputPassword.value = '';
+  refs.buttonAuth.classList.remove('visually-hidden');
+  refs.buttonOut.classList.add('visually-hidden');
+  refs.inputLogin.value = '';
+  refs.inputPassword.value = '';
 
   localStorage.removeItem('user');
 };
 
 
-buttonOut.addEventListener('click', () => {
+refs.buttonOut.addEventListener('click', () => {
   logout();
 });
 
@@ -34,8 +29,8 @@ function onFormSubmit(e) {
   e.preventDefault();
 
   const user = {
-    login: inputLogin.value,
-    password: inputPassword.value,
+    login: refs.inputLogin.value,
+    password: refs.inputPassword.value,
   }
 
   if (user.login.trim() === '' || user.password.trim() === '') {
@@ -54,6 +49,6 @@ function onFormSubmit(e) {
 };
 
 if (localStorage.getItem('user')) {
-  buttonAuth.classList.add('visually-hidden');
-  buttonOut.classList.remove('visually-hidden');
+  refs.buttonAuth.classList.add('visually-hidden');
+  refs.buttonOut.classList.remove('visually-hidden');
 }
